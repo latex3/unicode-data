@@ -55,7 +55,21 @@ local function md_five(file)
 end
 
 do
-  local output = ""
+  -- Set up the header data
+  local output = "This is the file \"" .. unicode_casing .. "\",\n"
+    .. "generated using the script \"" .. arg[0] .."\".\n"
+    .. "\n"
+    .. "The data here are derived from the file\n"
+    .. "- " .. unicode_data .. "\n"
+    .. "  MD5 sum " .. md_five(unicode_data) .. "\n"
+    .. "which is maintained by the Unicode Constortium.\n"
+    .. "\n"
+    .. "Generated on " .. os.date("%Y-%m-%d") .. "\n"
+    .. "\n"
+    .. "Copyright 2015 The TeX Users Group\n"
+  -- Set up the comment chars
+  output = "%% " .. string.gsub(output, "\n", newline .. "%%%% ") .. newline
+
   local line
   local range_start = nil
   for line in io.lines(unicode_data) do
