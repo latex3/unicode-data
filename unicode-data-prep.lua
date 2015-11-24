@@ -31,7 +31,7 @@ do
   local file
   for _,file in pairs(data_files) do
     local f = io.open(file, "r")
-    if f ~= nil then
+    if f then
       io.close(f)
     else
       print("Cannot find data file \"" .. file .. "\"!")
