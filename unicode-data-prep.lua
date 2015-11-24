@@ -40,6 +40,20 @@ do
   end
 end
 
+-- Set up for MD5 sums
+-- Based on some ideas from Heiko Oberdiek's pdftexcmds
+local function md_five(file)
+  local f = io.open(file, "r")
+  local contents = f:read("*a")
+  return string.gsub(
+    md5.sum(contents),
+    ".",
+    function(ch)
+      return string.format("%02X", string.byte(ch))
+    end
+  )
+end
+
 do
   local output = ""
   local line
