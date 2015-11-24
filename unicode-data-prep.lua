@@ -1,6 +1,8 @@
 --[[
 
-  File unicode-data-prep.lua (C) Copyright 2015 Joseph Wright
+  File unicode-data-prep.lua
+
+  Copyright 2015 The TeX Users Group
 
 --]]
 
