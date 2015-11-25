@@ -54,6 +54,19 @@ local function md_five(file)
   )
 end
 
+-- http://snipplr.com/view/13086/number-to-hex/
+local function int_to_hex(num)
+  local hexstr = "0123456789ABCDEF"
+  local s = ""
+  while num > 0 do
+    local mod = math.fmod(num, 16)
+    s = string.sub(hexstr, mod + 1, mod + 1) .. s
+    num = math.floor(num / 16)
+  end
+  if s == "" then s = "0" end
+  return s
+end
+
 do
   -- Set up the header data
   local output = "This is the file \"" .. unicode_casing .. "\",\n"
@@ -98,19 +111,6 @@ do
           .. " " .. (lower and lower or codepoint)
           .. newline
       end
-    end
-
-    -- http://snipplr.com/view/13086/number-to-hex/
-    local function int_to_hex(num)
-      local hexstr = "0123456789ABCDEF"
-      local s = ""
-      while num > 0 do
-        local mod = math.fmod(num, 16)
-        s = string.sub(hexstr, mod + 1, mod + 1) .. s
-        num = math.floor(num / 16)
-      end
-      if s == "" then s = "0" end
-      return s
     end
 
     -- First check if we are looking for a line that ends a range
