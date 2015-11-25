@@ -1,3 +1,5 @@
+#!/usr/bin/env texlua
+
 --[[
 
   File unicode-data-prep.lua
