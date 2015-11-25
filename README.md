@@ -2,7 +2,7 @@ The Unicode Consortium provide a range of data files detailing
 the nature of codepoints in Unicode. These data files are
 machine-readable but large. Here, a script is provided to extract
 the relevant information for setting up case and character class
-data in TeX in a format that is format-neutral and rapdily
+data in TeX in a format that is format-neutral and rapidly
 parsable.
 
 The extracted data is in two files:
