@@ -84,8 +84,19 @@ function output_header(file, sources)
   end
   local source
   for _,source in ipairs(sources) do
+    header = header .. "- " ..source .. "\n"
+    -- Look for version/date comments
+    local f = io.open(source, "r")
+    local line = f:read("*line")
+    if string.match(line, "^#") then
+      local version = string.match(line, "(%d%.%d%.%d)%.txt$")
+      line = f:read("*line")
+      local date = string.match(line, ": ([^,]*, [^ ]*)")
+      header = header
+        .. "  Version " .. version .. " dated " .. date .. "\n"
+    end
+    io.close(f)
     header = header
-      .. "- " ..source .. "\n"
       .. "  MD5 sum " .. md_five(source) .. "\n"
   end
   if #sources == 1 then
