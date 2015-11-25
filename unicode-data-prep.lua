@@ -7,7 +7,7 @@
 --]]
 
 -- Version information
-local release_date    = "2015/11/24"
+local release_date    = "2015-11-25"
 local release_version = "0.0"
 
 -- File names
