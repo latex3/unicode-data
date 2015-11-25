@@ -107,7 +107,7 @@ function output_header(file, sources)
     header = header .. "which are"
   end
   header = header
-    .. " maintained by the Unicode Constortium.\n"
+    .. " maintained by the Unicode Consortium.\n"
     .. "\n"
     .. "Generated on " .. os.date("%Y-%m-%d") .. "\n"
     .. "\n"
