@@ -15,7 +15,8 @@ local east_asian_data = "EastAsianWidth.txt"
 local line_break_data = "LineBreak.txt"
 local unicode_data    = "UnicodeData.txt"
 
-local unicode_casing = "unicode-casing.def"
+local unicode_casing  = "unicode-casing.def"
+local unicode_classes = "unicode-classes.def"
 
 -- OS-dependent line ending
 if os.type == "windows" then
@@ -167,4 +168,78 @@ do
   io.output(output_file)
   io.write(output)
   io.close(output_file)
+end
+
+do
+
+  local data_pattern = "^([^;%.]*)%.?%.?([^;]*);([^ ]*)"
+
+  local width_class = { }
+
+  do
+
+    local store_classes = "FHW"
+
+    local line
+    for line in io.lines(east_asian_data) do
+      -- Skip comment lines
+      if not string.match(line, "^#") then
+        first, last, class = string.match(line, data_pattern)
+        -- Tidy up single code points
+        if last == "" then last = first end
+        if class and string.match(store_classes, class) then
+          local i
+          for i = tonumber(first, 16), tonumber(last, 16) do
+            width_class[int_to_hex(i)] = class
+          end
+        end
+      end
+    end
+
+  end
+
+  do
+
+    local output = output_header(
+      unicode_classes, {east_asian_data, line_break_data}
+    )
+
+    local classes = {
+      ID = true,
+      OP = true,
+      CL = true,
+      EX = true,
+      IS = true,
+      NS = true,
+      CM = true
+    }
+
+    for line in io.lines(line_break_data) do
+      -- Skip comment lines
+      if not string.match(line, "^#") then
+        first, last, class = string.match(line, data_pattern)
+        if last == "" then last = first end
+        if classes[class] then
+          if class == "ID" then
+            output = output .. "\\ID " .. first .. " " .. last .. newline
+          else
+            local i
+            for i = tonumber(first, 16), tonumber(last, 16) do
+              local codepoint = int_to_hex(i)
+              if width_class[codepoint] then
+                output = output .. "\\" .. class .. " " .. codepoint .. newline
+              end
+            end
+          end
+        end
+      end
+    end
+
+    local output_file = io.open(unicode_classes, "w")
+    io.output(output_file)
+    io.write(output)
+    io.close(output_file)
+
+  end
+
 end
