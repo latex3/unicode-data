@@ -41,20 +41,6 @@ do
   end
 end
 
--- Set up for MD5 sums
--- Based on some ideas from Heiko Oberdiek's pdftexcmds
-local function md_five(file)
-  local f = io.open(file, "r")
-  local contents = f:read("*a")
-  return string.gsub(
-    md5.sum(contents),
-    ".",
-    function(ch)
-      return string.format("%02X", string.byte(ch))
-    end
-  )
-end
-
 -- http://snipplr.com/view/13086/number-to-hex/
 local function int_to_hex(num)
   local hexstr = "0123456789ABCDEF"
@@ -71,6 +57,21 @@ end
 -- The comment header is similar in all output files:
 -- use a function to generate it
 function output_header(file, sources)
+
+  -- Set up for MD5 sums
+  -- Based on some ideas from Heiko Oberdiek's pdftexcmds
+  local function md_five(file)
+    local f = io.open(file, "r")
+    local contents = f:read("*a")
+    return string.gsub(
+      md5.sum(contents),
+      ".",
+      function(ch)
+        return string.format("%02X", string.byte(ch))
+      end
+    )
+  end
+
   local header = "This is the file \"" .. file .. "\",\n"
     .. "generated using the script \"" .. arg[0] .. "\"\n"
     .. "(version " .. release_version .. " dated " .. release_date .. ").\n"
