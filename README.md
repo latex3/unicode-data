@@ -44,3 +44,10 @@ values: the codepoint, the corresponding upper case codepoint
 and the corresponding lower case codepoint, separated by spaces.
 Lines for caseless characters contain a single hexidecimal value,
 the codepoint itself.
+
+Characters are defined as letters, combining marks or otherwise in
+the file `UnicodeData.txt`, and this information is used directly.
+Cased non-letters are identified as they have a distinct upper or
+lower case mapping. In the same way, cased letters are identified
+as at least on of the upper or lower case mappings is given and
+is not the codepoint itself. There are no cased combining marks.
