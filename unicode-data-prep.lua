@@ -136,9 +136,9 @@ do
     -- Needed in a couple of places
     local function savedata(cs, codepoint, upper, lower)
       if not upper and not lower then
-        output = output .. "\\l " .. codepoint .. newline
+        output = output .. "\\" .. string.lower(cs) .. " " .. codepoint .. newline
       elseif codepoint == upper and codepoint == lower then
-        output = output .. "\\l " .. codepoint .. newline
+        output = output .. "\\" .. string.lower(cs) .. " " .. codepoint .. newline
       else
         output = output .. "\\" .. cs
           .. " " .. codepoint
@@ -166,9 +166,10 @@ do
       else
         -- A single codepoint line
         -- Split letters (incl. marks) and none letters
-        if string.match(class, "^L") or
-           string.match(class, "^M") then
+        if string.match(class, "^L") then
            savedata("L", codepoint, upper, lower)
+        elseif string.match(class, "^M") then
+          savedata("M", codepoint)
         else
           -- Cased non-letters have at least one mapping
           if upper or lower then
