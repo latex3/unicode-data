@@ -67,22 +67,42 @@ local function int_to_hex(num)
   return s
 end
 
-do
-  -- Set up the header data
-  local output = "This is the file \"" .. unicode_casing .. "\",\n"
-    .. "generated using the script \"" .. arg[0] .."\".\n"
+-- The comment header is similar in all output files:
+-- use a function to generate it
+function output_header(file, sources)
+  local header = "This is the file \"" .. file .. "\",\n"
+    .. "generated using the script \"" .. arg[0] .. "\"\n"
+    .. "(version " .. release_version .. " dated " .. release_date .. ").\n"
     .. "\n"
-    .. "The data here are derived from the file\n"
-    .. "- " .. unicode_data .. "\n"
-    .. "  MD5 sum " .. md_five(unicode_data) .. "\n"
-    .. "which is maintained by the Unicode Constortium.\n"
+    .. "The data here are derived from the file"
+  if #sources == 1 then
+    header = header .. "\n"
+  else
+    header = header .. "s\n"
+  end
+  local source
+  for _,source in ipairs(sources) do
+    header = header
+      .. "- " ..source .. "\n"
+      .. "  MD5 sum " .. md_five(source) .. "\n"
+  end
+  if #sources == 1 then
+    header = header .. "which is"
+  else
+    header = header .. "which are"
+  end
+  header = header
+    .. " maintained by the Unicode Constortium.\n"
     .. "\n"
     .. "Generated on " .. os.date("%Y-%m-%d") .. "\n"
     .. "\n"
     .. "Copyright 2015 The TeX Users Group\n"
-  -- Set up the comment chars
-  output = "%% " .. string.gsub(output, "\n", newline .. "%%%% ") .. newline
+  return "%% " .. string.gsub(header, "\n", newline .. "%%%% ") .. newline
+end
 
+do
+  -- Set up the header data
+  local output = output_header(unicode_casing, {unicode_data})
 
   local range_start = nil
   local line
