@@ -70,8 +70,9 @@ do
   -- Set up the comment chars
   output = "%% " .. string.gsub(output, "\n", newline .. "%%%% ") .. newline
 
-  local line
+
   local range_start = nil
+  local line
   for line in io.lines(unicode_data) do
     -- Extract the relevant data lines
     -- Done using a string simply to make the code a little more readable
