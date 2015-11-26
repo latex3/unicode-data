@@ -52,3 +52,29 @@ distinct upper or lower case mapping. In the same way, cased
 letters are identified as at least on of the upper or lower case
 mappings is given and is not the code point itself. There are no
 cased combining marks.
+
+File `unicode-classes.def`
+==========================
+
+This file contains data extracted from `EastAsianWidth.txt` and
+`LineBreak.txt` and is concerned with the different classes of
+character that can be identified. This information is needed for
+line breaking in scripts which do not have spaces between words.
+Each data line begins with one of
+ - `\ID` Ideographic
+ - `\CL` Close Punctuation
+ - `\EX` Exclamation/Interrogation
+ - `\IS` Infix Numeric Separator
+ - `\NS` Nonstarter
+ - `\OP` Open Punctuation
+ - `\CM` Combining Mark
+all of which are described by the Unicode Consortium. Lines for
+ideographs are then followed by two code points: the start and
+end values for a range to which this description applies. All
+other lines contain exactly one code point after the class
+description. Separation of the code point from the class and between
+the code points is achieved by a space.
+
+All ideographic code points are recorded in the data file. Other
+classes are recorded if they have East Asian width type "F", "H"
+or "W" (full-, half- and wide-width).
