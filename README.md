@@ -49,7 +49,7 @@ Characters are defined as letters, combining marks or otherwise
 in the file `UnicodeData.txt`, and this information is used
 directly. Cased non-letters are identified as they have a
 distinct upper or lower case mapping. In the same way, cased
-letters are identified as at least on of the upper or lower case
+letters are identified as at least one of the upper or lower case
 mappings is given and is not the code point itself. There are no
 cased combining marks.
 
