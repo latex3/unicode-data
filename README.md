@@ -39,7 +39,7 @@ cased non-letter characters. Each data line begins with one of
  - `\l` A caseless letter
  - `\m` A (caseless) combining mark
  - `\C` A cased non-letter
-Lines for cased characters then contain three hexidecimal
+Lines for cased characters then contain three hexadecimal
 values: the codepoint, the corresponding upper case codepoint
 and the corresponding lower case codepoint, separated by spaces.
 Lines for caseless characters contain a single hexidecimal value,
