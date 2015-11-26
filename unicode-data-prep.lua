@@ -130,14 +130,12 @@ do
     local codepoint, desc, class, upper, lower =
       string.match(line, data_pattern)
     -- Make later testing easier
-    if upper == "" then upper = nil end
-    if lower == "" then lower = nil end
+    if upper == "" or upper == codepoint then upper = nil end
+    if lower == "" or lower == codepoint then lower = nil end
 
     -- Needed in a couple of places
     local function savedata(cs, codepoint, upper, lower)
       if not upper and not lower then
-        output = output .. "\\" .. string.lower(cs) .. " " .. codepoint .. newline
-      elseif codepoint == upper and codepoint == lower then
         output = output .. "\\" .. string.lower(cs) .. " " .. codepoint .. newline
       else
         output = output .. "\\" .. cs
