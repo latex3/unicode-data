@@ -79,11 +79,25 @@ All ideographic code points are recorded in the data file. Other
 classes are recorded if they have East Asian width type "F", "H"
 or "W" (full-, half- and wide-width).
 
-Data copyright
-==============
+Issues and improvements
+=======================
 
-The data used to generate these files is provided by the Unicode
-Consortium, and the following following notice applies.
+Any issues with the `.def` files should be addressed by updating
+the generator script. The home page for this bundle is
+https://github.com/josephwright/unicode-data, and issues may be
+reported there.
+
+License and permission
+======================
+
+This bundle is copyright 2015 The TeX Users Group.
+
+You may freely use, modify and/or distribute the files provided
+here, subject only to the conditions which apply to the source
+data.
+
+The data used to generate the `.def` files is provided by the
+Unicode Consortium, and the following following notice applies.
 
 COPYRIGHT AND PERMISSION NOTICE
 

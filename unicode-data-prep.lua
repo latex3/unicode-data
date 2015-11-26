@@ -5,6 +5,11 @@
   File unicode-data-prep.lua
 
   Copyright 2015 The TeX Users Group
+  
+  You may freely use, modify and/or distribute this file.
+
+  Issues with this script should be reported at
+  https://github.com/josephwright/unicode-data
 
 --]]
 
@@ -158,6 +163,9 @@ function output_header(file, sources)
     .. "Generated on " .. os.date("%Y-%m-%d") .. "\n"
     .. "\n"
     .. "This file is copyright 2015 The TeX Users Group\n"
+    ..  "\n"
+    .. "You may freely use, modify and/or distribute this file,\n"
+    .. "subject to the conditions for the source data noted below.\n"
     .. "\n"
     .. "The following applies to the data from the Unicode Consortium\n"
     .. "\n" .. data_notice
