@@ -1,3 +1,36 @@
+% File example-unicode-loader.tex
+% 
+% Copyright 2015 The TeX Users Group
+% 
+% You may freely use, modify and/or distribute this file.
+%
+% Issues with this script should be reported at
+% https://github.com/josephwright/unicode-data
+%
+% This is an example loader for the files
+% - unicode-casing.def
+% -unicode-classes.def
+% which contain Unicode codepoint information in a form amenable
+% to rapid processing by TeX.
+%
+% This file assumes that the TeX engine in use is
+% Unicode-capable (XeTeX or LuaTeX). It is designed to work in
+% IniTeX mode assuming no non-standard category codes are set
+% and that TeX and e-TeX primitives are available with their
+% normal names.
+% 
+% This file sets the following properties:
+% - \catcode for all code points marked as letters and all
+%   letter-like marks 
+% - \uccode for all code points with an upper case mapping
+% - \lccode for all code points with an upper case mapping
+% - \sfcode of 999 for for all code points with an upper case
+%   mapping
+% - \Umathcode for code points (letters, marks and cased
+%   non-letters)
+% - When used with XeTeX, \XeTeXcharclass for East Asian
+%   characters with line break information available
+%
 \begingroup
   \catcode`\{=1 %
   \catcode`\}=2 %
