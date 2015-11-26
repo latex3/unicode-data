@@ -43,7 +43,7 @@ Lines for cased characters then contain three hexadecimal
 values: the code point, the corresponding upper case code point
 and the corresponding lower case code point, separated by
 spaces. Lines for caseless characters contain a single
-hexidecimal value, the code point itself.
+hexadecimal value, the code point itself.
 
 Characters are defined as letters, combining marks or otherwise
 in the file `UnicodeData.txt`, and this information is used
