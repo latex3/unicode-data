@@ -9,8 +9,8 @@
 --]]
 
 -- Version information
-local release_date    = "2015-11-25"
-local release_version = "0.1"
+local release_date    = "2015-11-26"
+local release_version = "0.2"
 
 -- File names
 local east_asian_data = "EastAsianWidth.txt"
