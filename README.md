@@ -32,9 +32,9 @@ preserving the Unix (LF) line endings.
 File `unicode-cases.def`
 ========================
 
-This file contains data extracted from `UnicodeData.txt`
-and is concerned with cased and caseless letters along with
-cased non-letter characters. Each data line begins with one of
+This file contains data extracted from `UnicodeData.txt` and is
+concerned with cased and caseless letters along with cased
+non-letter characters. Each data line begins with one of
  - `\L` A cased letter
  - `\l` A caseless letter
  - `\m` A (caseless) combining mark
