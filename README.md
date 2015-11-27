@@ -90,7 +90,7 @@ reported there.
 License and permission
 ======================
 
-This bundle is copyright 2015 The TeX Users Group.
+This bundle is copyright 2015 The LaTeX3 Project
 
 You may freely use, modify and/or distribute the files provided
 here, subject only to the conditions which apply to the source

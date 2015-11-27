@@ -4,7 +4,7 @@
 
   File unicode-data-prep.lua
 
-  Copyright 2015 The TeX Users Group
+  Copyright 2015 The LaTeX3 Project
   
   You may freely use, modify and/or distribute this file.
 
