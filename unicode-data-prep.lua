@@ -9,7 +9,7 @@
   You may freely use, modify and/or distribute this file.
 
   Issues with this script should be reported at
-  https://github.com/josephwright/unicode-data
+  https://github.com/latex3/unicode-data
 
 --]]
 
