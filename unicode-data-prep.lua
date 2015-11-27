@@ -211,22 +211,20 @@ do
         output = output .. "\\l " .. int_to_hex(i) .. newline
       end
       range_start = nil
+    -- If not, is this a line that starts a range?
+    elseif string.match(desc, "First%>$") then
+      range_start = codepoint
+    -- A single codepoint line
     else
-      -- If not, is this a line that starts a range?
-      if string.match(desc, "First%>$") then
-        range_start = codepoint
+      -- Split letters (incl. marks) and none letters
+      if string.match(class, "^L") then
+         savedata("L", codepoint, upper, lower)
+      elseif string.match(class, "^M") then
+        savedata("M", codepoint)
       else
-        -- A single codepoint line
-        -- Split letters (incl. marks) and none letters
-        if string.match(class, "^L") then
-           savedata("L", codepoint, upper, lower)
-        elseif string.match(class, "^M") then
-          savedata("M", codepoint)
-        else
-          -- Cased non-letters have at least one mapping
-          if upper or lower then
-            savedata("C", codepoint, upper, lower)
-          end
+        -- Cased non-letters have at least one mapping
+        if upper or lower then
+          savedata("C", codepoint, upper, lower)
         end
       end
     end
