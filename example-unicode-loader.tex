@@ -31,6 +31,9 @@
 % - When used with XeTeX, \XeTeXcharclass for East Asian
 %   characters with line break information available
 %
+\ifx\Umathcode\undefined
+  \expandafter\endinput
+\fi
 \begingroup
   \catcode`\{=1 %
   \catcode`\}=2 %
