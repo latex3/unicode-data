@@ -204,15 +204,12 @@ do
     end
 
     -- First check if we are looking for a line that ends a range
-    if range_start then
-      if string.match(class, "^L") then
-        local i
-        for i = tonumber(range_start, 16), tonumber(codepoint, 16) do
-          -- Generate the appropriate non-cased letter
-          output = output .. "\\l " .. int_to_hex(i) .. newline
-        end
+    if range_start and string.match(class, "^L") then
+      local i
+      for i = tonumber(range_start, 16), tonumber(codepoint, 16) do
+        -- Generate the appropriate non-cased letter
+        output = output .. "\\l " .. int_to_hex(i) .. newline
       end
-
       range_start = nil
     else
       -- If not, is this a line that starts a range?
