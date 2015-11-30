@@ -91,12 +91,10 @@
         \global\sfcode"#1=999 %
       \fi
     \else
-      \ifx\relax#3\relax
-      \else
+      \unless\ifx\relax#3\relax
         \global\uccode"#1="#3 %
       \fi
-      \ifx\relax#4\relax
-      \else
+      \unless\ifx\relax#4\relax
         \global\lccode"#1="#4 %
       \fi
     \fi
@@ -112,8 +110,7 @@
 % An auxiliary to deal with the fact that some cased letters don't actually
 % have a case mapping available.
   \def\parseunicodedataVI#1#2#3{%
-    \ifx\relax#3\relax
-    \else
+    \unless\ifx\relax#3\relax
       \global#1"#2="#3 %
     \fi
   }%
