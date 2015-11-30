@@ -26,15 +26,27 @@
 % - \lccode and/or \uccode for non-letter code points for which an upper
 %   or lower case mapping is given
 %
+% =============================================================================
+%
+% The data can only be loaded by Unicode engines. Currently this is limited to
+% XeTeX and LuaTeX, both of which define \Umathcode (though that is not used in
+% this file).
 \ifx\Umathcode\undefined
   \expandafter\endinput
 \fi
-%
+% This file can be loaded in IniTeX mode so the category codes of |{|, |}| and
+% |#| may not be correct. Everything is done in a group so that only the
+% settings we want to propagate are made available generally.
 \begingroup
   \catcode`\{=1 %
   \catcode`\}=2 %
   \catcode`\#=6 %
-  \def\firsttoken#1#2\relax{#1}%
+% The first stage of parsing is dealing with the fact aht there are lots of
+% data items separated by |;|. Of those, only a few are needed so they are
+% picked out and everything else is dropped. There is one complication: there
+% are a few cases in the data file of ranges which are marked by the descriptor
+% |First| and a matching |Last|. A separate routine is used to handle these
+% cases.
   \def\parseunicodedataI#1;#2;#3;#4;#5;#6;#7;#8;#9;{%
     \parseunicodedataII#1;#3;#2 First>\relax
   }%
@@ -42,34 +54,40 @@
     \ifx\relax#4\relax
       \expandafter\parseunicodedataIII
     \else
-      \expandafter\parseunicodedataVI
+      \expandafter\parseunicodedataVII
     \fi
     #1;#2;%
   }%
   \def\parseunicodedataIII#1;#2;#3;#4;#5;#6;#7;#8\relax{%
     \parseunicodedataIV{#1}{#2}{#6}{#7}%
   }%
+% At this stage we have a `normal' data line with four pieces of information:
+% the code point, the Unicode class and the (possibly empty) upper and lower
+% case mappings. A few utility macros are defined, then we branch based on the
+% Unicode class. Notice that for all letter-like code points we first set the
+% |\lccode| and |\uccode| values to the code point itself then test for the
+% classes where a different setting might be appropriate. For non-letters
+% there is a check to see if any mappings are available.
   \def\Ll{Ll}%
   \def\Lt{Lt}%
   \def\Lu{Lu}%
+  \def\firsttoken#1#2\relax{#1}%
   \def\parseunicodedataIV#1#2#3#4{%
     \ifnum 0%
       \if L\firsttoken#2?\relax 1\fi
       \if M\firsttoken#2?\relax 1\fi
       >0 %
-      \global\catcode"#1=11 %
-      \global\lccode"#1="#1 %
-      \global\uccode"#1="#1 %
+      \parseunicodedataV{"#1}%
       \def\temp{#2}%
       \ifx\Ll\temp
-        \parseunicodedataV\uccode{#1}{#3}%
+        \parseunicodedataVI\uccode{#1}{#3}%
       \fi
       \ifx\Lt\temp
-        \parseunicodedataV\uccode{#1}{#3}%
-        \parseunicodedataV\lccode{#1}{#4}%
+        \parseunicodedataVI\uccode{#1}{#3}%
+        \parseunicodedataVI\lccode{#1}{#4}%
       \fi
       \ifx\Lu\temp
-        \parseunicodedataV\lccode{#1}{#4}%
+        \parseunicodedataVI\lccode{#1}{#4}%
         \global\sfcode"#1=999 %
       \fi
     \else
@@ -83,26 +101,39 @@
       \fi
     \fi
   }%
-  \def\parseunicodedataV#1#2#3{%
+  \def\parseunicodedataV#1{%
+    \global\catcode#1=11 %
+    \global\lccode#1=#1 %
+    \global\uccode#1=#1 %
+  }%
+% An auxiliary to deal with the fact that some cased letters don't actually
+% have a case mapping available.
+  \def\parseunicodedataVI#1#2#3{%
     \ifx\relax#3\relax
     \else
       \global#1"#2="#3 %
     \fi
   }%
-  \def\parseunicodedataVI#1;#2;#3\relax{%
+% For lines that were the |First>| of a range, read the data source again for
+% last line. Lines for letters then trigger a loop over the entire range. These
+% are always non-cased letters.
+  \def\parseunicodedataVII#1;#2;#3\relax{%
     \read0 to \unicodedataline
-    \expandafter\parseunicodedataVII\unicodedataline\relax#1;#2\relax
+    \expandafter\parseunicodedataXII\unicodedataline\relax#1;#2\relax
   }%
-  \def\parseunicodedataVII#1;#2\relax#3;#4\relax{%
+  \def\parseunicodedataXII#1;#2\relax#3;#4\relax{%
     \if L\firsttoken#4?\relax
       \count0="#3 %
       \loop
         \unless\ifnum\count0>"#1 %
-          \global\catcode\count0=11 %
+          \parseunicodedataV{\count0}%
           \advance\count0 by 1 %
       \repeat
     \fi
   }%
+% Actually loading the file requires an input stream, done directly.
+% There is a blank line at the end of the data source so there is a check
+% here for a |\par|.
   \def\storedpar{\par}%
   \openin0=UnicodeData.txt %
   \loop\unless\ifeof0 %
