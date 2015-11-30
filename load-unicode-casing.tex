@@ -74,24 +74,16 @@
         \global\lccode"#1="#1 %
         \global\uccode"#1="#1 %
       \else
-        \ifx\relax#3#4\relax
+        \ifx\relax#3\relax
         \else
-          \parseunicodedataVI{#1}{#3}{#4}%
+          \global\uccode"#1="#3 %
+        \fi
+        \ifx\relax#4\relax
+        \else
+          \global\lccode"#1="#4 %
         \fi
       \fi
     \fi
-  }%
-  \def\parseunicodedataVI#1#2#3{%
-      \ifx\relax#2\relax
-        \global\uccode"#1="#1 %
-      \else
-        \global\uccode"#1="#2 %
-      \fi
-      \ifx\relax#3\relax
-        \global\lccode"#1="#1 %
-      \else
-        \global\lccode"#1="#3 %
-      \fi
   }%
   \def\parseunicodedataVII#1;#2;#3\relax{%
     \read0 to \unicodedataline
