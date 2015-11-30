@@ -101,6 +101,9 @@
       \fi
     \fi
   }%
+% A simple auxiliary for all letter-like code points: the |\lccode| and
+% |\uccode| may get reset for cased letters but this means the initial
+% setting can't be forgotten.
   \def\parseunicodedataV#1{%
     \global\catcode#1=11 %
     \global\lccode#1=#1 %
