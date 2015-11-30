@@ -1,4 +1,21 @@
-% 
+% File load-unicode-casing.tex
+%
+% Copyright 2015 The LaTeX3 Project
+%
+% You may freely use, modify and/or distribute this file.
+%
+% Issues with this file should be reported at
+% https://github.com/latex3/unicode-data
+%
+% This file parses UnicodeData.txt, provided by the Unicode Consortium,
+% and when used with a Unicode-capable engine sets the following TeX
+% properties:
+% - \catcode 11 for all letters (Unicode class "L")
+% - \catcode 11 for all combining marks (Unicode class "M")
+% - \sfcode 999 for all code points of class Lu (upper case letters)
+% - \lccode and/or \uccode for non-letter code points for which an upper
+%   or lower case mapping is given
+%
 \ifx\Umathcode\undefined
   \expandafter\endinput
 \fi
