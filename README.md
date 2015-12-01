@@ -60,7 +60,7 @@ points of class "ID" to `\XeTeXcharclass` five you would use
 File `load-unicode-math-classes.tex`
 ====================================
 
-This file parses MathClass.txt, provided by the Unicode
+This file parses `MathClass.txt`, provided by the Unicode
 Consortium, and when used with a Unicode-capable engine sets the
 `\Umathcode` with the following mapping between Unicode class
 and TeX math type:
