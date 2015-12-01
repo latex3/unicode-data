@@ -46,9 +46,7 @@
       \parseunicodedataIV{#1}{#2}#4%
     \fi
   }%
-% Looks for letters and assign them either as variables (if alphabetic) or
-% other characters otherwise. This assumes that the |\catcode| data have
-% already been set up correctly.
+% Examine the Unicode class and if known set up the math code appropriately.
   \chardef\B=2 %
   \chardef\R=3 %
   \chardef\O=4 %
