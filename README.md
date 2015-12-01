@@ -89,9 +89,14 @@ License and permission
 
 This bundle is copyright 2015 The LaTeX3 Project
 
-You may freely use, modify and/or distribute the files provided
-here, subject only to the conditions which apply to the source
-data (`.txt` files), to which the following notice applies.
+It may be distributed and/or modified under the conditions of
+the LaTeX Project Public License (LPPL), either version 1.3c of
+this license or (at your option) any later version. The latest
+version of this license is in the file
+http://www.latex-project.org/lppl.txt.
+
+The source data (`.txt` files) are supplied by the Unicode
+Consortium an the following notice applies.
 
 COPYRIGHT AND PERMISSION NOTICE
 
