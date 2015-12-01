@@ -1,0 +1,70 @@
+% File load-unicode-math-classes.tex
+%
+% Copyright 2015 The LaTeX3 Project
+%
+% You may freely use, modify and/or distribute this file.
+%
+% Issues with this file should be reported at
+% https://github.com/latex3/unicode-data
+%
+% =============================================================================
+%
+% The data can only be loaded by Unicode engines. Currently this is limited to
+% XeTeX and LuaTeX, both of which define \Umathcode and used here.
+\ifx\Umathcode\undefined
+  \expandafter\endinput
+\fi
+% This file can be loaded in IniTeX mode so the category codes of |{|, |}| and
+% |#| may not be correct. Everything is done in a group so that only the
+% settings we want to propagate are made available generally.
+\begingroup
+  \catcode`\{=1 %
+  \catcode`\}=2 %
+  \catcode`\#=12 %
+% A string version of |#| will be needed to look for comment lines in the
+% source. Once that is done proper parsing can begin.
+  \def\hash{#}%
+  \catcode`\#=6 %
+  \def\firsttoken#1#2\relax{#1}%
+  \def\parseunicodedataI#1\relax{%
+    \unless\if\hash\firsttoken#1?\relax
+      \parseunicodedataII#1\relax
+    \fi
+  }%
+  \def\parseunicodedataII#1;#2#3\relax{%
+    \parseunicodedataIII#1....\relax{#2}%
+  }%
+  \def\parseunicodedataIII#1..#2..#3\relax#4{%
+    \ifx\relax#2\relax
+      \parseunicodedataIV{#1}{#1}#4%
+    \else
+      \parseunicodedataIV{#1}{#2}#4%
+    \fi
+  }%
+  \def\parseunicodedataIV#1#2#3{%
+    \begingroup
+      \count0="#1 %
+      \loop
+        \ifnum\count0<"#2 %
+          \ifnum\catcode\count0=11 %
+            \if#3A%
+              \global\Umathcode\count0=7 01 \count0 %
+            \else
+              \global\Umathcode\count0=0 01 \count0 %
+            \fi
+          \fi
+        \advance\count0 by 1 %
+      \repeat
+    \endgroup
+  }%
+  \def\storedpar{\par}%
+  \openin0=MathClass.txt %
+  \catcode`\#=12 %
+  \loop\unless\ifeof0 %
+    \read0 to \unicodedataline
+    \unless\ifx\unicodedataline\storedpar
+      \expandafter\parseunicodedataI\unicodedataline\relax
+    \fi
+  \repeat
+  \closein0 %
+\endgroup
