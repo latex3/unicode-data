@@ -75,7 +75,7 @@ and TeX math type:
 
 For each code point processed, the result is of the form
 
-  \Umathcode <codepoint> = <type> 1 <codepoint>
+    \Umathcode <codepoint> = <type> 1 <codepoint>
 
 Issues and improvements
 =======================
