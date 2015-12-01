@@ -9,13 +9,6 @@
 %
 % This file parses MathClass.txt, provided by the Unicode Consortium, and when
 % used with a Unicode-capable engine sets the \Umathcode as follows:
-% - For code points class "A" which are letters (\catcode 11), the math type
-%   is set to 7
-% - For code points which are letters (\catcode 11) but which are not of
-%   class "A" , the math type is set to 0
-%
-% Note that this file assumes that code points have an appropriate
-% \catcode set to indicate letters.
 %
 % =============================================================================
 %
@@ -56,17 +49,19 @@
 % Looks for letters and assign them either as variables (if alphabetic) or
 % other characters otherwise. This assumes that the |\catcode| data have
 % already been set up correctly.
+  \chardef\B=2 %
+  \chardef\R=3 %
+  \chardef\O=4 %
+  \chardef\C=5 %
+  \chardef\P=6 %
+  \chardef\A=7 %
   \def\parseunicodedataIV#1#2#3{%
     \begingroup
       \count0="#1 %
       \loop
         \ifnum\count0<"#2 %
-          \ifnum\catcode\count0=11 %
-            \if#3A%
-              \global\Umathcode\count0=7 01 \count0 %
-            \else
-              \global\Umathcode\count0=0 01 \count0 %
-            \fi
+          \ifcsname #3\endcsname
+            \global\Umathcode\count0=\csname #3\endcsname 1 \count0 %
           \fi
         \advance\count0 by 1 %
       \repeat
