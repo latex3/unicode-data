@@ -19,6 +19,16 @@ tdsroot = "generic"
 -- Release a TDS-style zip
 packtdszip  = true
 
+-- Versioning
+versionfiles = {"load-unicode-*.tex"}
+function setversion_update_line(line, date, version)
+  return string.gsub(
+    line,
+    "v%d.%d.? %(%d%d%d%d%-%d%d%-%d%d%)",
+    "v" .. version .. " (" .. date .. ")"
+  )
+end
+
 -- Find and run the build system
 kpse.set_program_name ("kpsewhich")
 dofile (kpse.lookup ("l3build.lua"))
