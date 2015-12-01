@@ -34,16 +34,28 @@ File `load-unicode-classes.tex`
 This file parses `EastAsianWidth.txt` and `LineBreak.txt`,
 provided by the Unicode Consortium, and when used with XeTeX
 sets `\XeTeXcharclass` for the following classes of code point:
-- "ID" (ideographic) are class 1
-- "OP" (opener) are class 2
-- "CL" (closer), "NS" (non-starter), "EX" (exclamation) and "IS"
-  (infix separator) are class 3
-- "CM" (combining marks) are class 256 (transparent to the
-  inter-character token register mechanism)
+- "ID" (ideographic)
+- "OP" (opener)
+- "CL" (closer)
+- "NS" (non-starter)
+- "EX" (exclamation)
+- "IS" (infix separator)
+- "CM" (combining marks)
 
-All code points of type "ID" are set to class 1, other code
-points are only set where they fall into east Asian width type
-"F", "H" or "W" (full-, half- and wide-width).
+All code points of class "ID" are assigned to a
+`\XeTeXcharclass`, but for other classes this only occurs when
+they fall into east Asian width type "F", "H" or "W" (full-,
+half- and wide-width).
+
+As standard, the following mappings between Unicode and XeTeX classes occur
+- "ID" -> 1
+- "OP" -> 2
+- "CL", "NS", "EX", "IS" - > 3
+- "CM" -> 256 (ignored)
+This may be over-ridden by defining `\XeTeXcharclass<name>` as
+the numerical value to use. For example, to assign Unicode code
+points of class "ID" to `\XeTeXcharclass` five you would use
+`\chardef\XeTeXcharclassID=5`.
 
 Issues and improvements
 =======================

@@ -10,16 +10,26 @@
 % This file parses EastAsianWidth.txt and LineBreak.txt, provided by the
 % Unicode Consortium, and when used with XeTeX sets \XeTeXcharclass for
 % the following classes of code point:
-% - "ID" (ideographic) are class 1
-% - "OP" (opener) are class 2 if they have east Asian width type
-% - "CL" (closer), "NS" (non-starter), "EX" (exclamation) and "IS" (infix
-%   separator) are class 3
-% - "CM" (combining marks) are class 256 (transparent to the inter-character
-%   token register mechanism)
+% - "ID" (ideographic)
+% - "OP" (opener)
+% - "CL" (closer)
+% - "NS" (non-starter)
+% - "EX" (exclamation)
+% - "IS" (infix separator)
+% - "CM" (combining marks)
 %
-% All code points of type "ID" are set to class 1, other code points are only
-% set where they fall into east Asian width type "F", "H" or "W" (full-, half-
-% and wide-width).
+% All code points of class "ID" are assigned to a \XeTeXcharclass, but for
+% other classes this only occurs when they fall into east Asian width type
+% "F", "H" or "W" (full-, half- and wide-width).
+%
+% As standard, the following mappings between Unicode and XeTeX classes occur
+% - "ID" -> 1
+% - "OP" -> 2
+% - "CL", "NS", "EX", "IS" - > 3
+% - "CM" -> 256 (ignored)
+% This may be over-ridden by defining \XeTeXcharclass<name> as the numerical
+% value to use. For example, to assign Unicode code points of class "ID" to
+% \XeTeXcharclass five you would use \chardef\XeTeXcharclassID=5.
 %
 % =============================================================================
 %
@@ -81,14 +91,30 @@
   }%
 % Read the east Asian width data: no settings are made at this stage.
   \readandparse{EastAsianWidth}%
-% Set up the different line break classes recognised.
+% Set up the different line break classes recognised. These might be provided
+% before the loader is used, in which case respect those.
+  \unless\ifdefined\XeTeXcharclassID
+    \chardef\XeTeXcharclassID=1 %
+  \fi
+  \unless\ifdefined\XeTeXcharclassOP
+    \chardef\XeTeXcharclassOP=2 %
+  \fi
+  \unless\ifdefined\XeTeXcharclassCL
+    \chardef\XeTeXcharclassCL=3 %
+  \fi
+  \unless\ifdefined\XeTeXcharclassEX
+    \chardef\XeTeXcharclassEX=3 %
+  \fi
+  \unless\ifdefined\XeTeXcharclassIS
+    \chardef\XeTeXcharclassIS=3 %
+  \fi
+  \unless\ifdefined\XeTeXcharclassNS
+    \chardef\XeTeXcharclassNS=3 %
+  \fi
+  \unless\ifdefined\XeTeXcharclassCM
+    \chardef\XeTeXcharclassCM=256 %
+  \fi
   \def\ID{ID}%
-  \def\OP{2}%
-  \def\CL{3}%
-  \def\EX{3}%
-  \def\IS{3}%
-  \def\NS{3}%
-  \def\CM{256}%
 % Check the line break class and if necessary the east Asian width for the
 % current code point. For code points of class |ID| there may be a range to
 % set, and these are always recorded. In other cases check the east Asian width
@@ -107,7 +133,7 @@
         \if H\csname EAW@\number"#1\endcsname 1\fi
         \if W\csname EAW@\number"#1\endcsname 1\fi
          >0 %
-       \global\XeTeXcharclass"#1=\csname#4\endcsname
+       \global\XeTeXcharclass"#1=\csname XeTeXcharclass#4\endcsname
       \fi
     \fi
   }%
