@@ -11,12 +11,15 @@
 % Unicode Consortium, and when used with XeTeX sets \XeTeXcharclass for
 % the following classes of code point:
 % - "ID" (ideographic) are class 1
-% - "OP" (opener) are class 2
+% - "OP" (opener) are class 2 if they have east Asian width type
 % - "CL" (closer), "NS" (non-starter), "EX" (exclamation) and "IS" (infix
 %   separator) are class 3
 % - "CM" (combining marks) are class 256 (transparent to the inter-character
 %   token register mechanism)
 %
+% All code points of type "ID" are set to class 1, other code points are only
+% set where they fall into east Asian width type "F", "H" or "W" (full-, half-
+% and wide-width).
 % =============================================================================
 %
 % The data loaded here can currently only be used by XeTeX: check for the
