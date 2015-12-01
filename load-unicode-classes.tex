@@ -93,13 +93,14 @@
     \fi
   }%
   \def\parseunicodedataIV#1#2{%
-    \count0="#1 %
-    \loop
-      \ifnum\count0<"#2 %
-        \global\XeTeXcharclass\count0=1 %
-        \advance\count0 by 1 %
-    \repeat
+    \begingroup
+      \count0="#1 %
+      \loop
+        \ifnum\count0<"#2 %
+          \global\XeTeXcharclass\count0=1 %
+          \advance\count0 by 1 %
+      \repeat
+    \endgroup
   }%
   \readandparse{LineBreak}%
 \endgroup
-\bye
