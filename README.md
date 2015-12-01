@@ -12,15 +12,15 @@ Consortium, and when used with a Unicode-capable engine sets the
 following TeX properties:
 - `\catcode` 11 for all letters (Unicode class "L")
 - `\catcode` 11 for all combining marks (Unicode class "M")
-- `\sfcode` 999 for all code points of class Lu (upper case
+- `\sfcode` 999 for all code points of class "Lu" (upper case
   letters)
-- `\lccode` for all of class Ll (upper case letters) to the code
+- `\lccode` for all of class "Ll" (upper case letters) to the code
   point itself, and `\uccode` to the upper case mapping (or if
   not given to the code point itself)
-- `\uccode` for all of class Lu (upper case letters) to the code
+- `\uccode` for all of class "Lu" (upper case letters) to the code
   point itself, and `\lccode` to the lower case mapping (or if
   not given to the code point itself)
-- `\lccode` and `\uccode` for all of class Lt (title case
+- `\lccode` and `\uccode` for all of class "Lt" (title case
   letters) to the lower can upper case mappings (or if not given
   to the code point itself)
 - `\lccode` and `\uccode` for all other letter code points are
