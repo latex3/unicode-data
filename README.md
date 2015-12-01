@@ -74,8 +74,7 @@ and TeX math type:
 Issues and improvements
 =======================
 
-Any issues with the `.def` files should be addressed by updating
-the generator script. The home page for this bundle is
+The home page for this bundle is
 https://github.com/latex3/unicode-data, and issues may be
 reported there.
 
