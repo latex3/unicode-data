@@ -29,7 +29,7 @@ following TeX properties:
   which an upper or lower case mapping is given
 
 File `load-unicode-classes.tex`
-==========================
+===============================
 
 This file parses `EastAsianWidth.txt` and `LineBreak.txt`,
 provided by the Unicode Consortium, and when used with XeTeX
@@ -56,6 +56,20 @@ This may be over-ridden by defining `\XeTeXcharclass<name>` as
 the numerical value to use. For example, to assign Unicode code
 points of class "ID" to `\XeTeXcharclass` five you would use
 `\chardef\XeTeXcharclassID=5`.
+
+File `load-unicode-math-classes.tex`
+====================================
+
+This file parses MathClass.txt, provided by the Unicode
+Consortium, and when used with a Unicode-capable engine sets the
+`\Umathcode` with the following mapping between Unicode class
+and TeX math type:
+- "B" (binary)      type 2
+- "R" (relation)    type 3
+- "O" (opening)     type 4
+- "C" (closing)     type 5
+- "P" (punctuation) type 6
+- "A" (alphabetic)  type 7
 
 Issues and improvements
 =======================
