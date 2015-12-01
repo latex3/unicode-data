@@ -45,6 +45,11 @@
   \catcode`\{=1 %
   \catcode`\}=2 %
   \catcode`\#=12 %
+% Write some basic information to the log.
+  \newlinechar=`\^^J %
+  \message{^^J}%
+  \message{load-unicode-classes.tex v0.1 (2015-12-01)^^J}%
+  \message{Reading Unicode character class data^^J}%
 % A string version of |#| will be needed to look for comment lines in the
 % source. Once that is done proper parsing can begin.
   \def\hash{#}%
@@ -80,6 +85,9 @@
   \def\readandparse#1{%
     \openin0=#1.txt %
     \catcode`\#=12 %
+% Read a line from the source file to extract the version number
+    \read0 to \unicodedataline
+    \message{Source file: \unicodedataline ^^J}%
     \loop\unless\ifeof0 %
       \read0 to \unicodedataline
       \unless\ifx\unicodedataline\storedpar

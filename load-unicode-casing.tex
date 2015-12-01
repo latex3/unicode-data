@@ -41,6 +41,11 @@
   \catcode`\{=1 %
   \catcode`\}=2 %
   \catcode`\#=6 %
+% Write some basic information to the log.
+  \newlinechar=`\^^J %
+  \message{^^J}%
+  \message{load-unicode-casing.tex v0.1 (2015-12-01)^^J}%
+  \message{Reading Unicode casing and letter data^^J}%
 % The first stage of parsing is dealing with the fact aht there are lots of
 % data items separated by |;|. Of those, only a few are needed so they are
 % picked out and everything else is dropped. There is one complication: there
