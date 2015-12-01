@@ -7,6 +7,16 @@
 % Issues with this file should be reported at
 % https://github.com/latex3/unicode-data
 %
+% This file parses MathClass.txt, provided by the Unicode Consortium, and when
+% used with a Unicode-capable engine sets the \Umathcode as follows:
+% - For code points class "A" which are letters (\catcode 11), the math type
+%   is set to 7
+% - For code points which are letters (\catcode 11) but which are not of
+%   class "A" , the math type is set to 0
+%
+% Note that this file assumes that code points have an appropriate
+% \catcode set to indicate letters.
+%
 % =============================================================================
 %
 % The data can only be loaded by Unicode engines. Currently this is limited to
@@ -31,6 +41,8 @@
       \parseunicodedataII#1\relax
     \fi
   }%
+% Split a range of code points if given: the class here is always one token,
+% |#3| is currently blank but deals with any data that might be added later.
   \def\parseunicodedataII#1;#2#3\relax{%
     \parseunicodedataIII#1....\relax{#2}%
   }%
@@ -41,6 +53,9 @@
       \parseunicodedataIV{#1}{#2}#4%
     \fi
   }%
+% Looks for letters and assign them either as variables (if alphabetic) or
+% other characters otherwise. This assumes that the |\catcode| data have
+% already been set up correctly.
   \def\parseunicodedataIV#1#2#3{%
     \begingroup
       \count0="#1 %
