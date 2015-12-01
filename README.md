@@ -64,12 +64,14 @@ This file parses `MathClass.txt`, provided by the Unicode
 Consortium, and when used with a Unicode-capable engine sets the
 `\Umathcode` with the following mapping between Unicode class
 and TeX math type:
-- "B" (binary)      type 2
-- "R" (relation)    type 3
-- "O" (opening)     type 4
-- "C" (closing)     type 5
-- "P" (punctuation) type 6
-- "A" (alphabetic)  type 7
+- "L" (large)       `\mathop`
+- "B" (binary)      `\mathbin`
+- "V" (vary)        `\mathbin`
+- "R" (relation)    `\mathrel`
+- "O" (opening)     `\mathopen`
+- "C" (closing)     `\mathclose`
+- "P" (punctuation) `\mathpunct`
+- "A" (alphabetic)  `\mathalpha`
 
 Issues and improvements
 =======================
