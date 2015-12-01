@@ -91,10 +91,12 @@
         \global\sfcode"#1=999 %
       \fi
     \else
-      \unless\ifx\relax#3\relax
+      \ifx\relax#3\relax
+      \else
         \global\uccode"#1="#3 %
       \fi
-      \unless\ifx\relax#4\relax
+      \ifx\relax#4\relax
+      \else
         \global\lccode"#1="#4 %
       \fi
     \fi
@@ -110,7 +112,8 @@
 % An auxiliary to deal with the fact that some cased letters don't actually
 % have a case mapping available.
   \def\parseunicodedataVI#1#2#3{%
-    \unless\ifx\relax#3\relax
+    \ifx\relax#3\relax
+    \else
       \global#1"#2="#3 %
     \fi
   }%
@@ -138,8 +141,7 @@
   \openin0=UnicodeData.txt %
   \loop\unless\ifeof0 %
     \read0 to \unicodedataline  
-    \ifx\unicodedataline\storedpar
-    \else
+    \unless\ifx\unicodedataline\storedpar
       \expandafter\parseunicodedataI\unicodedataline\relax
     \fi
   \repeat
