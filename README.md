@@ -43,7 +43,7 @@ sets `\XeTeXcharclass` for the following classes of code point:
 
 All code points of type "ID" are set to class 1, other code
 points are only set where they fall into east Asian width type
-"F", "H" or "W" (full-, half- and wide-width)
+"F", "H" or "W" (full-, half- and wide-width).
 
 Issues and improvements
 =======================
