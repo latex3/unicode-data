@@ -73,6 +73,10 @@ and TeX math type:
 - "P" (punctuation) `\mathpunct`
 - "A" (alphabetic)  `\mathalpha`
 
+For each code point processed, the result is of the form
+
+  \Umathcode <codepoint> = <type> 1 <codepoint>
+
 Issues and improvements
 =======================
 
