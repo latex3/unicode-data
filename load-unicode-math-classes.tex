@@ -40,14 +40,15 @@
 \begingroup
   \catcode`\{=1 %
   \catcode`\}=2 %
-  \catcode`\#=12 %
 % Write some basic information to the log.
+  \catcode`\^=7 %
   \newlinechar=`\^^J %
   \message{^^J}%
   \message{load-unicode-math-classes.tex v0.1 (2015-12-01)^^J}%
   \message{Reading Unicode math class data^^J}%
 % A string version of |#| will be needed to look for comment lines in the
 % source. Once that is done proper parsing can begin.
+  \catcode`\#=12 %
   \def\hash{#}%
   \catcode`\#=6 %
   \def\firsttoken#1#2\relax{#1}%
