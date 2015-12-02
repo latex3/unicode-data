@@ -69,8 +69,7 @@
   \def\parseunicodedataII#1;#2 #3\relax{%
     \parseunicodedataIII#1....\relax{#2}%
   }%
-% For the East Asian width data, save the class of the current token if
-% it is |F|, |H| or |W|.
+% For the East Asian width data, save the class of the current token.
   \def\parseunicodedataIII#1..#2..#3\relax#4{%
     \expandafter\def\csname EAW@\number"#1\endcsname{#4}%
     \ifx\relax#2\relax
