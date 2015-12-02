@@ -28,6 +28,15 @@ following TeX properties:
 - `\lccode` and/or `\uccode` for non-letter code points for
   which an upper or lower case mapping is given
 
+File `load-unicode-math-punctuation.tex`
+========================================
+
+This file parses `UnicodeData.txt`, provided by the Unicode
+Consortium, and when used with a Unicode-capable engine sets the
+the `\sfcode` of code points of Unicode classes "Pe" (closing
+punctuation marks) and "Pf" (final quotation marks) to 0
+(transparent to TeX).
+
 File `load-unicode-classes.tex`
 ===============================
 
