@@ -28,8 +28,8 @@ following TeX properties:
 - `\lccode` and/or `\uccode` for non-letter code points for
   which an upper or lower case mapping is given
 
-File `load-unicode-math-punctuation.tex`
-========================================
+File `load-unicode-punctuation.tex`
+===================================
 
 This file parses `UnicodeData.txt`, provided by the Unicode
 Consortium, and when used with a Unicode-capable engine sets the
