@@ -69,6 +69,17 @@
       \parseunicodedataIV{#1}{#2}#4%
     \fi
   }%
+% From plain: may not be defined (yet).
+  \def\loop#1\repeat{\def\body{#1}\iterate}%
+  \def\iterate{%
+    \body
+      \let\next\iterate
+    \else
+      \let\next\relax
+    \fi
+    \next
+  }%
+  \let\repeat\fi
 % Examine the Unicode class and if known set up the math code appropriately.
   \chardef\L=1 %
   \chardef\B=2 %
