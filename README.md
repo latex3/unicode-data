@@ -37,8 +37,8 @@ the `\sfcode` of code points of Unicode classes "Pe" (closing
 punctuation marks) and "Pf" (final quotation marks) to 0
 (transparent to TeX).
 
-File `load-unicode-classes.tex`
-===============================
+File `load-unicode-east-asian-classes.tex`
+==========================================
 
 This file parses `EastAsianWidth.txt` and `LineBreak.txt`,
 provided by the Unicode Consortium, and when used with XeTeX
