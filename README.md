@@ -66,6 +66,10 @@ the numerical value to use. For example, to assign Unicode code
 points of class "ID" to `\XeTeXcharclass` five you would use
 `\chardef\XeTeXcharclassID=5`.
 
+This file does _not_ activate XeTeX's inter-character token
+mechanism (`\XeTeXinterchartokenstate` is not set) nor does it
+install any material in the inter-character token registers.
+
 File `load-unicode-math-classes.tex`
 ====================================
 
