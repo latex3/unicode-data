@@ -58,6 +58,15 @@
     \next
   }%
   \let\repeat\fi
+% There is no version data in |UnicodeData.txt| so a |.def| file is provided
+% as part of the bundle.
+  \catcode`\#=12 %
+  \openin0=UnicodeData.def %
+  \read0 to \unicodedataline
+  \message{\unicodedataline ^^J}%
+  \read0 to \unicodedataline
+  \message{\unicodedataline ^^J}%
+  \closein0 %
 % Actually loading the file requires an input stream, done directly.
 % There is a blank line at the end of the data source so there is a check
 % here for a |\par|.
