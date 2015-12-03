@@ -109,7 +109,7 @@ version of this license is in the file
 http://www.latex-project.org/lppl.txt.
 
 The source data (`.txt` files) are supplied by the Unicode
-Consortium an the following notice applies.
+Consortium and the following notice applies.
 
 COPYRIGHT AND PERMISSION NOTICE
 
