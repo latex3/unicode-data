@@ -106,8 +106,9 @@
   \catcode`\#=12 %
 % Read two lines from the source file to extract the version number
   \read0 to \unicodedataline
+  \message{\unicodedataline ^^J}%
   \read0 to \unicodedataline
-  \message{Source file: \unicodedataline ^^J}%
+  \message{\unicodedataline ^^J}%
   \loop\unless\ifeof0 %
     \read0 to \unicodedataline
     \unless\ifx\unicodedataline\storedpar

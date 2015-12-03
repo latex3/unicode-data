@@ -104,9 +104,11 @@
   \def\readandparse#1{%
     \openin0=#1.txt %
     \catcode`\#=12 %
-% Read a line from the source file to extract the version number
+% Read two linse from the source file to extract the version information
     \read0 to \unicodedataline
-    \message{Source file: \unicodedataline ^^J}%
+    \message{\unicodedataline ^^J}%
+    \read0 to \unicodedataline
+    \message{\unicodedataline ^^J}%
     \loop\unless\ifeof0 %
       \read0 to \unicodedataline
       \unless\ifx\unicodedataline\storedpar
