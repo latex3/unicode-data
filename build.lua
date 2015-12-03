@@ -5,7 +5,7 @@ bundle = ""
 module = "unicode-data"
 
 -- Non-standard installation
-installfiles = {"load-unicode-*.tex", "*.txt"}
+installfiles = {"*.def", "*.tex", "*.txt"}
 
 -- Nothing to typeset or unpack
 sourcefiles  = installfiles
