@@ -102,8 +102,11 @@
 % has to be altered.
   \def\storedpar{\par}%
   \def\readandparse#1{%
-    \openin0=#1.txt %
     \catcode`\#=12 %
+    \everyeof{\noexpand}%
+    \edef\temp{\input #1.txt }%
+    \message{^^J}%
+    \openin0=#1.txt %
 % Read two linse from the source file to extract the version information
     \read0 to \unicodedataline
     \message{\unicodedataline ^^J}%

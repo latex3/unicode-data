@@ -58,9 +58,13 @@
     \next
   }%
   \let\repeat\fi
+% Force the full path of the data file to appear in the log.
+  \catcode`\#=12 %
+  \everyeof{\noexpand}%
+  \edef\temp{\input UnicodeData.txt }%
+  \message{^^J}%
 % There is no version data in |UnicodeData.txt| so a |.def| file is provided
 % as part of the bundle.
-  \catcode`\#=12 %
   \openin0=UnicodeData.def %
   \read0 to \unicodedataline
   \message{\unicodedataline ^^J}%

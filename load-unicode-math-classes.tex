@@ -101,9 +101,13 @@
       \repeat
     \endgroup
   }%
+% Force the full path of the data file to appear in the log.
+  \catcode`\#=12 %
+  \everyeof{\noexpand}%
+  \edef\temp{\input MathClass.txt }%
+  \message{^^J}%
   \def\storedpar{\par}%
   \openin0=MathClass.txt %
-  \catcode`\#=12 %
 % Read two lines from the source file to extract the version number
   \read0 to \unicodedataline
   \message{\unicodedataline ^^J}%
