@@ -37,8 +37,8 @@ the `\sfcode` of code points of Unicode classes "Pe" (closing
 punctuation marks) and "Pf" (final quotation marks) to 0
 (transparent to TeX).
 
-File `load-unicode-east-asian-classes.tex`
-==========================================
+File `load-unicode-xetex-classes.tex`
+=====================================
 
 This file parses `EastAsianWidth.txt` and `LineBreak.txt`,
 provided by the Unicode Consortium, and when used with XeTeX
@@ -56,19 +56,20 @@ All code points of class "ID" are assigned to a
 they fall into east Asian width type "F", "H" or "W" (full-,
 half- and wide-width).
 
-As standard, the following mappings between Unicode and XeTeX classes occur
-- "ID" -> 1
-- "OP" -> 2
-- "CL", "NS", "EX", "IS" - > 3
-- "CM" -> 256 (ignored)
-This may be over-ridden by defining `\XeTeXcharclass<name>` as
-the numerical value to use. For example, to assign Unicode code
-points of class "ID" to `\XeTeXcharclass` five you would use
-`\chardef\XeTeXcharclassID=5`.
+The following mappings between Unicode and XeTeX classes occur
+- "ID" is class 1
+- "OP" is class 2
+- "CL", "NS", "EX", "IS" are class 3
+- "CM" is class 256 (ignored)
 
 This file does _not_ activate XeTeX's inter-character token
 mechanism (`\XeTeXinterchartokenstate` is not set) nor does it
 install any material in the inter-character token registers.
+
+Note that this file is provided as it matches behaviour present
+in the build process for (plain) XeTeX formats since the engine
+was first developed. The granularity of this set up may not be
+sufficient depending upon the use case.
 
 File `load-unicode-math-classes.tex`
 ====================================
