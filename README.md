@@ -4,12 +4,12 @@ machine-readable but large. Here, a set of loaders are provided
 to parse these files during a TeX run and set appropriate
 parameters in an automated fashion.
 
-File `load-unicode-casing.tex`
-==============================
+The loader parses a number of data files provided by the Unicode
+Consortium and when used with used Unicode-capable engine sets
+up a range of TeX-related parameters based on the extracted
+information.
 
-This file parses `UnicodeData.txt`, provided by the Unicode
-Consortium, and when used with a Unicode-capable engine sets the
-following TeX properties:
+From the file `UnicodeData.txt` the following properties are set:
 - `\catcode` 11 for all letters (Unicode class "L")
 - `\catcode` 11 for all combining marks (Unicode class "M")
 - `\sfcode` 999 for all code points of class "Lu" (upper case
@@ -27,22 +27,27 @@ following TeX properties:
   set to the code point itself
 - `\lccode` and/or `\uccode` for non-letter code points for
   which an upper or lower case mapping is given
+- `\sfcode` 0 (ignored) for code points of Unicode classes "Pe"
+  (closing punctuation marks) and "Pf" (final quotation marks)
 
-File `load-unicode-punctuation.tex`
-===================================
+From the file `MathClass.txt` the following mapping are
+implemented between Unicode classes and TeX math types
+- "L" (large)       `\mathop`
+- "B" (binary)      `\mathbin`
+- "V" (vary)        `\mathbin`
+- "R" (relation)    `\mathrel`
+- "O" (opening)     `\mathopen`
+- "C" (closing)     `\mathclose`
+- "P" (punctuation) `\mathpunct`
+- "A" (alphabetic)  `\mathalpha`
 
-This file parses `UnicodeData.txt`, provided by the Unicode
-Consortium, and when used with a Unicode-capable engine sets the
-the `\sfcode` of code points of Unicode classes "Pe" (closing
-punctuation marks) and "Pf" (final quotation marks) to 0
-(transparent to TeX).
+For each code point processed, the result is of the form
 
-File `load-unicode-east-asian-classes.tex`
-==========================================
+    \Umathcode <codepoint> = <type> 1 <codepoint>
 
-This file parses `EastAsianWidth.txt` and `LineBreak.txt`,
-provided by the Unicode Consortium, and when used with XeTeX
-sets `\XeTeXcharclass` for the following classes of code point:
+From the files `EastAsianWidth.txt` and `LineBreak.txt` inter
+character classes for XeTeX (`\XeTeXcharclass`) are set for the
+following classes
 - "ID" (ideographic)
 - "OP" (opener)
 - "CL" (closer)
@@ -69,26 +74,6 @@ points of class "ID" to `\XeTeXcharclass` five you would use
 This file does _not_ activate XeTeX's inter-character token
 mechanism (`\XeTeXinterchartokenstate` is not set) nor does it
 install any material in the inter-character token registers.
-
-File `load-unicode-math-classes.tex`
-====================================
-
-This file parses `MathClass.txt`, provided by the Unicode
-Consortium, and when used with a Unicode-capable engine sets the
-`\Umathcode` with the following mapping between Unicode class
-and TeX math type:
-- "L" (large)       `\mathop`
-- "B" (binary)      `\mathbin`
-- "V" (vary)        `\mathbin`
-- "R" (relation)    `\mathrel`
-- "O" (opening)     `\mathopen`
-- "C" (closing)     `\mathclose`
-- "P" (punctuation) `\mathpunct`
-- "A" (alphabetic)  `\mathalpha`
-
-For each code point processed, the result is of the form
-
-    \Umathcode <codepoint> = <type> 1 <codepoint>
 
 Issues and improvements
 =======================
