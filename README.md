@@ -66,6 +66,7 @@ The following mappings between Unicode and XeTeX classes occur
 - "OP" is class 2
 - "CL", "NS", "EX", "IS" are class 3
 - "CM" is class 256 (ignored)
+
 This may be over-ridden by defining `\XeTeXcharclass<name>` as
 the numerical value to use. For example, to assign Unicode code
 points of class "ID" to `\XeTeXcharclass` five you would use
