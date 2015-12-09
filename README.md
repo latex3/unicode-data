@@ -80,6 +80,27 @@ install any material in the inter-character token registers.
 Note that this file is separate from the main loader as the data
 structure here may need more refinement at the macro level.
 
+Data files
+==========
+
+The following data files are included here with permission of the
+Unicode Consortium (see below):
+- `UnicodeData.txt`
+- `Blocks.txt`
+- `CaseFolding.txt`
+- `EastAsianWidth.txt`
+- `LineBreak.txt`
+- `MathClass.txt`
+- `SpecialCasing.txt`
+
+With the exception of `MathClass.txt`, which is currently not
+formally part of the Unicode Character Database, all of the
+data files here are for Unicode 8.0.0.
+
+Requests to include additional Unicode data files in this bundle are
+welcome. Ideally this bundle will act as a single location for all
+Unicode data for use by TeX systems.
+
 Issues and improvements
 =======================
 
