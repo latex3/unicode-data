@@ -4,6 +4,9 @@ machine-readable but large. Here, a set of loaders are provided
 to parse these files during a TeX run and set appropriate
 parameters in an automated fashion.
 
+File: `load-unicode-data.tex`
+=============================
+
 The loader parses a number of data files provided by the Unicode
 Consortium and when used with used Unicode-capable engine sets
 up a range of TeX-related parameters based on the extracted
@@ -45,6 +48,9 @@ For each code point processed, the result is of the form
 
     \Umathcode <codepoint> = <type> 1 <codepoint>
 
+File: `load-unicode-xetex-classes.tex`
+======================================
+
 From the files `EastAsianWidth.txt` and `LineBreak.txt` inter
 character classes for XeTeX (`\XeTeXcharclass`) are set for the
 following classes
@@ -67,14 +73,12 @@ The following mappings between Unicode and XeTeX classes occur
 - "CL", "NS", "EX", "IS" are class 3
 - "CM" is class 256 (ignored)
 
-This may be over-ridden by defining `\XeTeXcharclass<name>` as
-the numerical value to use. For example, to assign Unicode code
-points of class "ID" to `\XeTeXcharclass` five you would use
-`\chardef\XeTeXcharclassID=5`.
-
 This file does _not_ activate XeTeX's inter-character token
 mechanism (`\XeTeXinterchartokenstate` is not set) nor does it
 install any material in the inter-character token registers.
+
+Note that this file is separate from the main loader as the data
+structure here may need more refinement at the macro level.
 
 Issues and improvements
 =======================
