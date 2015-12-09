@@ -86,7 +86,6 @@ Data files
 The following data files are included here with permission of the
 Unicode Consortium (see below):
 - `UnicodeData.txt`
-- `Blocks.txt`
 - `CaseFolding.txt`
 - `EastAsianWidth.txt`
 - `LineBreak.txt`
