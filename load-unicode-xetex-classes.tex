@@ -46,6 +46,10 @@
 \ifx\XeTeXcharclass\undefined
   \expandafter\endinput
 \fi
+% Just in case, check for the e-TeX extensions.
+\ifx\eTeXversion\undefined
+  \expandafter\endinput
+\fi
 % This file can be loaded in IniTeX mode so the category codes of |{|, |}| and
 % |#| may not be correct. Everything is done in a group so that only the
 % settings we want to propagate are made available generally.
