@@ -107,6 +107,11 @@ The home page for this bundle is
 https://github.com/latex3/unicode-data, and issues may be
 reported there.
 
+Changes
+=======
+
+- v1.0 (2015-12-01) First public release
+
 License and permission
 ======================
 
