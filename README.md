@@ -72,6 +72,8 @@ The following mappings between Unicode and XeTeX classes occur
 - "OP" is class 2
 - "CL", "NS", "EX", "IS" are class 3
 - "CM" is class 256 (ignored)
+as standard: these may be over-ridden by defining
+`\XeTeXcharclass<class>` as required.
 
 This file does _not_ activate XeTeX's inter-character token
 mechanism (`\XeTeXinterchartokenstate` is not set) nor does it
@@ -111,6 +113,8 @@ Changes
 =======
 
 - v1.0 (2015-12-01) First public release
+- v1.1 (2016-01-04) Allow setting of XeTeX character class
+                    slot numbers
 
 License and permission
 ======================
