@@ -112,9 +112,11 @@ reported there.
 Changes
 =======
 
-- v1.0 (2015-12-01) First public release
-- v1.1 (2016-01-04) Allow setting of XeTeX character class
-                    slot numbers
+- v1.0  (2015-12-01) First public release
+- v1.1  (2016-01-04) Allow setting of XeTeX character class
+                     slot numbers
+- v1.1a (2016-01-06) Correctly assign XeTeX character class for
+                     code points in ranges
 
 License and permission
 ======================

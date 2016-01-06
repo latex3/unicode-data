@@ -185,7 +185,7 @@
       \count0="#1 %
       \loop
         \ifnum\count0<"#2 %
-          \global\XeTeXcharclass\count0=1 %
+          \global\XeTeXcharclass\count0=\XeTeXcharclassID
           \advance\count0 by 1 %
       \repeat
     \endgroup
