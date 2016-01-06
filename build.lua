@@ -13,6 +13,11 @@ textfiles    = {"*.md"}
 typesetfiles = { }
 unpackfiles  = { }
 
+-- Testing
+checkformat  = "tex"
+checkengines = {"xetex", "luatex"}
+stdengine    = "xetex"
+
 -- Non-standard installation root
 tdsroot = "generic"
 

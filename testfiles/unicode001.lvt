@@ -1,0 +1,40 @@
+%
+% Copyright (C) 2016 The LaTeX3 Project
+%
+
+\input regression-test %
+\AUTHOR{Joseph Wright}
+
+\def\Assert#1#2#3{%
+  \ifnum#1"#2=#3 %
+    \TRUE
+  \else
+    \FALSE: \number#1"#2 %
+  \fi
+  \NEWLINE
+}
+
+\input load-unicode-data %
+
+\TESTEXP{Category codes: letters}
+  {%
+    \Assert\catcode{0041}{11}% LATIN CAPITAL LETTER A
+    \Assert\catcode{0061}{11}% LATIN SMALL LETTER A
+    \Assert\catcode{00AA}{11}% FEMININE ORDINAL INDICATOR
+    \Assert\catcode{00B5}{11}% MICRO SIGN
+    \Assert\catcode{00D4}{11}% LATIN CAPITAL LETTER O WITH CIRCUMFLEX
+    \Assert\catcode{02EC}{11}% MODIFIER LETTER VOICING
+    \Assert\catcode{043A}{11}% CYRILLIC SMALL LETTER KA
+  }
+
+\TESTEXP{Category codes: marks}
+  {%
+    \Assert\catcode{030C}{11}% COMBINING CARON
+    \Assert\catcode{0316}{11}% COMBINING GRAVE ACCENT BELOW
+    \Assert\catcode{0363}{11}% OMBINING LATIN SMALL LETTER A
+    \Assert\catcode{0487}{11}% COMBINING CYRILLIC POKRYTIE
+    \Assert\catcode{0591}{11}% HEBREW ACCENT ETNAHTA
+    \Assert\catcode{06D8}{11}% ARABIC SMALL HIGH MEEM INITIAL FORM
+  }
+
+\END
