@@ -121,7 +121,7 @@ Changes
 License and permission
 ======================
 
-This bundle is copyright 2015 The LaTeX3 Project
+This bundle is copyright 2015,2016 The LaTeX3 Project
 
 It may be distributed and/or modified under the conditions of
 the LaTeX Project Public License (LPPL), either version 1.3c of
