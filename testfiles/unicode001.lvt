@@ -31,7 +31,7 @@
   {%
     \Assert\catcode{030C}{11}% COMBINING CARON
     \Assert\catcode{0316}{11}% COMBINING GRAVE ACCENT BELOW
-    \Assert\catcode{0363}{11}% OMBINING LATIN SMALL LETTER A
+    \Assert\catcode{0363}{11}% COMBINING LATIN SMALL LETTER A
     \Assert\catcode{0487}{11}% COMBINING CYRILLIC POKRYTIE
     \Assert\catcode{0591}{11}% HEBREW ACCENT ETNAHTA
     \Assert\catcode{06D8}{11}% ARABIC SMALL HIGH MEEM INITIAL FORM
