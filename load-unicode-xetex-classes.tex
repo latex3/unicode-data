@@ -156,7 +156,18 @@
       \fi
     \else
       \ifcsname XeTeXcharclass#4\endcsname
-        \expandafter\def\csname LB@\number"#1\endcsname{#4}%
+        \ifx\relax#2\relax
+          \expandafter\def\csname LB@\number"#1\endcsname{#4}%
+        \else
+          \let\savedbody\body
+          \count0="#1 %
+          \loop
+            \ifnum\count0<"#2 %
+            \expandafter\def\csname LB@\number\count0 \endcsname{#4}%
+            \advance\count0 by 1 %
+          \repeat
+          \let\body\savedbody
+        \fi
       \fi
     \fi
   }%
