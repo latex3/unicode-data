@@ -96,12 +96,14 @@
     \expandafter\def\csname EAW@\number"#1\endcsname{#4}%
     \ifx\relax#2\relax
     \else
+      \let\savedbody\body
       \count0="#1 %
       \loop
         \ifnum\count0<"#2 %
           \advance\count0 by 1 %
           \expandafter\def\csname EAW@\number\count0\endcsname{#4}%
       \repeat
+      \let\body\savedbody
     \fi
   }%
 % A shared routine for reading the data files: only one part of the parser

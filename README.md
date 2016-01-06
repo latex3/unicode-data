@@ -117,6 +117,8 @@ Changes
                      slot numbers
 - v1.1a (2016-01-06) Correctly assign XeTeX character class for
                      code points in ranges
+                     Fix issue which meant EastAsianWidth.txt
+                     was not read
 
 License and permission
 ======================
