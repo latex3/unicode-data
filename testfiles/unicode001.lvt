@@ -64,12 +64,8 @@
 
 \TESTEXP{Space factors: letters}
   {%
-    \Assert\sfcode{0041} {999}% LATIN CAPITAL LETTER A
-    \Assert\sfcode{0061}{1000}% LATIN SMALL LETTER A
-    \Assert\sfcode{00AA}{1000}% FEMININE ORDINAL INDICATOR
-    \Assert\sfcode{00B5}{1000}% MICRO SIGN
-    \Assert\sfcode{00D4} {999}% LATIN CAPITAL LETTER O WITH CIRCUMFLEX
-    \Assert\sfcode{02EC}{1000}% MODIFIER LETTER VOICING
+    \Assert\sfcode{0041}{999}% LATIN CAPITAL LETTER A
+    \Assert\sfcode{00D4}{999}% LATIN CAPITAL LETTER O WITH CIRCUMFLEX
   }
 
 \END
