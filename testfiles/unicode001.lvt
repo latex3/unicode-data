@@ -155,14 +155,13 @@
 
 \TEST{Math codes}
   {%
-    \AssertUmathcode{0606}{0}%
-    \AssertUmathcode{002F}{1}%
-    \AssertUmathcode{002B}{1}%
-    \AssertUmathcode{2212}{1}%
-    \AssertUmathcode{003C}{2}%
-    \AssertUmathcode{2190}{2}%
-    \AssertUmathcode{21B3}{2}%
+    \AssertUmathcode{0606}{1}%
+    \AssertUmathcode{002F}{2}%
+    \AssertUmathcode{002B}{2}%
+    \AssertUmathcode{2212}{2}%
     \AssertUmathcode{003C}{3}%
+    \AssertUmathcode{2190}{3}%
+    \AssertUmathcode{21B3}{3}%
     \AssertUmathcode{2020}{3}%
     \AssertUmathcode{2190}{3}%
     \AssertUmathcode{21B3}{3}%
