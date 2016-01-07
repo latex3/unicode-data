@@ -19,10 +19,14 @@
   \XeTeXcharclass"#1=0 %
 }
 
+\resetcodes{0028}
+\resetcodes{169B}
 \resetcodes{231A}
 \resetcodes{231B}
 \resetcodes{2E80}
 \resetcodes{2E99}
+\resetcodes{FF5B}
+\resetcodes{FF62}
 
 \input load-unicode-xetex-classes %
 
@@ -39,6 +43,14 @@
     \Assert\XeTeXcharclass{231B}{1}% HOURGLASS
     \Assert\XeTeXcharclass{2E80}{1}% CJK RADICAL REPEAT
     \Assert\XeTeXcharclass{2E99}{1}% CJK RADICAL RAP
+  }
+
+\TESTEXP{Opener}
+  {%
+    \Assert\XeTeXcharclass{0028}{0}% LEFT PARENTHESIS
+    \Assert\XeTeXcharclass{169B}{0}% OGHAM FEATHER MARK
+    \Assert\XeTeXcharclass{FF5B}{2}% FULLWIDTH LEFT CURLY BRACKET
+    \Assert\XeTeXcharclass{FF62}{2}% HALFWIDTH LEFT CORNER BRACKET
   }
 
 \END
