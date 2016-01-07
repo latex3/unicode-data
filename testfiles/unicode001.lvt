@@ -39,6 +39,8 @@
 \resetcodes{0591}
 \resetcodes{06D8}
 \resetcodes{1F88}
+\resetcodes{2160}
+\resetcodes{2170}
 \resetcodes{3400}
 \resetcodes{4DB5}
 \resetcodes{4E00}
@@ -119,6 +121,14 @@
     \Assert\uccode{4E00}{"4E00}% <CJK Ideograph, First>
     \Assert\lccode{9FD5}{"9FD5}% <CJK Ideograph, Last>
     \Assert\uccode{9FD5}{"9FD5}% <CJK Ideograph, Last>
+  }
+
+\TESTEXP{Case mappings: cased non-letters}
+  {%
+    \Assert\lccode{2160}{"2170}% ROMAN NUMERAL ONE
+    \Assert\uccode{2160}{"0000}% ROMAN NUMERAL ONE
+    \Assert\lccode{2170}{"0000}% SMALL ROMAN NUMERAL ONE
+    \Assert\uccode{2170}{"2160}% SMALL ROMAN NUMERAL ONE
   }
 
 \END
