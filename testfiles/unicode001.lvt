@@ -34,6 +34,8 @@
 
 \input load-unicode-data %
 
+\START
+
 \TESTEXP{Category codes: letters}
   {%
     \Assert\catcode{0041}{11}% LATIN CAPITAL LETTER A
