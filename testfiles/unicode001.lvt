@@ -17,20 +17,28 @@
 % Need to reset valves to those from IniTeX
 \protected\def\resetcodes#1{%
   \catcode"#1 =   12 %
+  \lccode "#1 =    0 %
   \sfcode "#1 = 1000 %
+  \uccode "#1 =    0 %
 }
 %\resetcodes{0041}
 %\resetcodes{0061}
 \resetcodes{00AA}
 \resetcodes{00B5}
 \resetcodes{00D4}
+\resetcodes{00DF}
+\resetcodes{01F2}
 \resetcodes{02EC}
 \resetcodes{030C}
 \resetcodes{0316}
 \resetcodes{0363}
+\resetcodes{0391}
+\resetcodes{03D3}
+\resetcodes{043A}
 \resetcodes{0487}
 \resetcodes{0591}
 \resetcodes{06D8}
+\resetcodes{1F88}
 \resetcodes{3400}
 \resetcodes{4DB5}
 \resetcodes{4E00}
@@ -46,7 +54,13 @@
     \Assert\catcode{00AA}{11}% FEMININE ORDINAL INDICATOR
     \Assert\catcode{00B5}{11}% MICRO SIGN
     \Assert\catcode{00D4}{11}% LATIN CAPITAL LETTER O WITH CIRCUMFLEX
+    \Assert\catcode{00DF}{11}% LATIN SMALL LETTER SHARP S
+    \Assert\catcode{01F2}{11}% LATIN CAPITAL LETTER D WITH SMALL LETTER Z
     \Assert\catcode{02EC}{11}% MODIFIER LETTER VOICING
+    \Assert\catcode{043A}{11}% CYRILLIC SMALL LETTER KA
+    \Assert\catcode{0391}{11}% GREEK CAPITAL LETTER ALPHA
+    \Assert\catcode{03D3}{11}% GREEK UPSILON WITH ACUTE AND HOOK SYMBOL
+    \Assert\catcode{1F88}{11}% GREEK CAPITAL LETTER ALPHA WITH PSILI AND PROSGEGRAMMENI
     \Assert\catcode{3400}{11}% <CJK Ideograph Extension A, First>
     \Assert\catcode{4DB5}{11}% <CJK Ideograph Extension A, Last>
     \Assert\catcode{4E00}{11}% <CJK Ideograph, First>
@@ -64,8 +78,33 @@
 
 \TESTEXP{Space factors: letters}
   {%
-    \Assert\sfcode{0041}{999}% LATIN CAPITAL LETTER A
-    \Assert\sfcode{00D4}{999}% LATIN CAPITAL LETTER O WITH CIRCUMFLEX
+    \Assert\sfcode{0041} {999}% LATIN CAPITAL LETTER A
+    \Assert\sfcode{00D4} {999}% LATIN CAPITAL LETTER O WITH CIRCUMFLEX
+    \Assert\sfcode{1F88}{1000}% GREEK CAPITAL LETTER ALPHA WITH PSILI AND PROSGEGRAMMENI
+  }
+
+\TESTEXP{Case mappings: lower case letters}
+  {%
+    \Assert\uccode{0061}{"0041}% LATIN SMALL LETTER A
+    \Assert\uccode{00B5}{"039C}% MICRO SIGN
+    \Assert\uccode{00DF}{"00DF}% LATIN SMALL LETTER SHARP S
+    \Assert\uccode{043A}{"041A}% CYRILLIC SMALL LETTER KA
+  }
+
+\TESTEXP{Case mappings: upper case letters}
+  {%
+    \Assert\lccode{0041}{"0061}% LATIN CAPITAL LETTER A
+    \Assert\lccode{00D4}{"00F4}% LATIN CAPITAL LETTER O WITH CIRCUMFLEX
+    \Assert\lccode{0391}{"03B1}% GREEK CAPITAL LETTER ALPHA
+    \Assert\lccode{03D3}{"03D3}% GREEK UPSILON WITH ACUTE AND HOOK SYMBOL
+  }
+
+\TESTEXP{Case mappings: title case letters}
+  {%
+    \Assert\lccode{01F2}{"01F3}% LATIN CAPITAL LETTER D WITH SMALL LETTER Z
+    \Assert\uccode{01F2}{"01F1}% LATIN CAPITAL LETTER D WITH SMALL LETTER Z
+    \Assert\lccode{1F88}{"1F80}% GREEK CAPITAL LETTER ALPHA WITH PSILI AND PROSGEGRAMMENI
+    \Assert\uccode{1F88}{"1F88}% GREEK CAPITAL LETTER ALPHA WITH PSILI AND PROSGEGRAMMENI
   }
 
 \END
