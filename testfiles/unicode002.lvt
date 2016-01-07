@@ -19,13 +19,27 @@
   \XeTeXcharclass"#1=0 %
 }
 
+\resetcodes{0021}
 \resetcodes{0028}
+\resetcodes{002C}
+\resetcodes{007D}
+\resetcodes{0F3B}
 \resetcodes{169B}
+\resetcodes{203C}
+\resetcodes{203D}
 \resetcodes{231A}
 \resetcodes{231B}
 \resetcodes{2E80}
 \resetcodes{2E99}
+\resetcodes{3005}
+\resetcodes{309B}
+\resetcodes{309C}
+\resetcodes{FE13}
+\resetcodes{FE14}
+\resetcodes{FF01}
 \resetcodes{FF5B}
+\resetcodes{FF5D}
+\resetcodes{FF61}
 \resetcodes{FF62}
 
 \input load-unicode-xetex-classes %
@@ -51,6 +65,27 @@
     \Assert\XeTeXcharclass{169B}{0}% OGHAM FEATHER MARK
     \Assert\XeTeXcharclass{FF5B}{2}% FULLWIDTH LEFT CURLY BRACKET
     \Assert\XeTeXcharclass{FF62}{2}% HALFWIDTH LEFT CORNER BRACKET
+  }
+
+\TESTEXP{Closers}
+  {%
+    \Assert\XeTeXcharclass{007D}{0}% RIGHT CURLY BRACKET
+    \Assert\XeTeXcharclass{0F3B}{0}% TIBETAN MARK GUG RTAGS GYAS
+    \Assert\XeTeXcharclass{FF5D}{3}% FULLWIDTH RIGHT CURLY BRACKET
+    \Assert\XeTeXcharclass{FF61}{3}% HALFWIDTH IDEOGRAPHIC FULL STOP
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \Assert\XeTeXcharclass{203C}{0}% DOUBLE EXCLAMATION MARK
+    \Assert\XeTeXcharclass{203D}{0}% INTERROBANG
+    \Assert\XeTeXcharclass{3005}{3}% IDEOGRAPHIC ITERATION MARK
+    \Assert\XeTeXcharclass{309B}{3}% KATAKANA-HIRAGANA VOICED SOUND MARK
+    \Assert\XeTeXcharclass{309C}{3}% KATAKANA-HIRAGANA SEMI-VOICED SOUND MARK
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \Assert\XeTeXcharclass{0021}{0}% EXCLAMATION MARK
+    \Assert\XeTeXcharclass{FF01}{3}% FULLWIDTH EXCLAMATION MARK
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \Assert\XeTeXcharclass{002C}{0}% COMMA
+    \Assert\XeTeXcharclass{FE13}{3}% PRESENTATION FORM FOR VERTICAL COLON
+    \Assert\XeTeXcharclass{FE14}{3}% PRESENTATION FORM FOR VERTICAL SEMICOLON
   }
 
 \END
