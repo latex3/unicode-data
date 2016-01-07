@@ -14,6 +14,24 @@
   \NEWLINE
 }
 
+% Need to reset valves to those from IniTeX
+\protected\def\resetcodes#1{%
+  \catcode"#1 =   12 %
+  \sfcode "#1 = 1000 %
+}
+%\resetcodes{0041}
+%\resetcodes{0061}
+\resetcodes{00AA}
+\resetcodes{00B5}
+\resetcodes{00D4}
+\resetcodes{02EC}
+\resetcodes{030C}
+\resetcodes{0316}
+\resetcodes{0363}
+\resetcodes{0487}
+\resetcodes{0591}
+\resetcodes{06D8}
+
 \input load-unicode-data %
 
 \TESTEXP{Category codes: letters}
