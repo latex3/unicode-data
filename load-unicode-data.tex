@@ -164,12 +164,14 @@
   }%
   \def\parseunicodedataXII#1;#2\relax#3;#4\relax{%
     \if L\firsttoken#4?\relax
-      \count0="#3 %
-      \loop
-        \unless\ifnum\count0>"#1 %
-          \parseunicodedataV{\count0}%
-          \advance\count0 by 1 %
-      \repeat
+      \begingroup
+        \count0="#3 %
+        \loop
+          \unless\ifnum\count0>"#1 %
+            \parseunicodedataV{\count0}%
+            \advance\count0 by 1 %
+        \repeat
+      \endgroup
     \fi
   }%
 % From plain: may not be defined (yet).

@@ -119,8 +119,10 @@ Changes
                      code points in ranges
                      Fix issue which meant EastAsianWidth.txt
                      was not read
-- v1.1b (2016-01-06) Avoid save stack issue when loaded
+- v1.1b (2016-01-07) Avoid save stack issue when loaded
                      EastAsianWidth.txt
+                     Fix application of settings to ranges of
+                     Unicode characters
 
 License and permission
 ======================

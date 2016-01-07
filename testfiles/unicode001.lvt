@@ -31,6 +31,9 @@
 \resetcodes{0487}
 \resetcodes{0591}
 \resetcodes{06D8}
+\resetcodes{3400}
+\resetcodes{4DB5}
+\resetcodes{4E00}
 
 \input load-unicode-data %
 
@@ -44,6 +47,9 @@
     \Assert\catcode{00B5}{11}% MICRO SIGN
     \Assert\catcode{00D4}{11}% LATIN CAPITAL LETTER O WITH CIRCUMFLEX
     \Assert\catcode{02EC}{11}% MODIFIER LETTER VOICING
+    \Assert\catcode{3400}{11}% <CJK Ideograph Extension A, First>
+    \Assert\catcode{4DB5}{11}% <CJK Ideograph Extension A, Last>
+    \Assert\catcode{4E00}{11}% <CJK Ideograph, First>
   }
 
 \TESTEXP{Category codes: marks}
