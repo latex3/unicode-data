@@ -24,7 +24,6 @@
     \Assert\catcode{00B5}{11}% MICRO SIGN
     \Assert\catcode{00D4}{11}% LATIN CAPITAL LETTER O WITH CIRCUMFLEX
     \Assert\catcode{02EC}{11}% MODIFIER LETTER VOICING
-    \Assert\catcode{043A}{11}% CYRILLIC SMALL LETTER KA
   }
 
 \TESTEXP{Category codes: marks}
@@ -45,7 +44,6 @@
     \Assert\sfcode{00B5}{1000}% MICRO SIGN
     \Assert\sfcode{00D4} {999}% LATIN CAPITAL LETTER O WITH CIRCUMFLEX
     \Assert\sfcode{02EC}{1000}% MODIFIER LETTER VOICING
-    \Assert\sfcode{043A}{1000}% CYRILLIC SMALL LETTER KA
   }
 
 \END
