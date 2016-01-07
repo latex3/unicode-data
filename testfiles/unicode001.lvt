@@ -42,6 +42,7 @@
 \resetcodes{3400}
 \resetcodes{4DB5}
 \resetcodes{4E00}
+\resetcodes{9FD5}
 
 \input load-unicode-data %
 
@@ -64,6 +65,7 @@
     \Assert\catcode{3400}{11}% <CJK Ideograph Extension A, First>
     \Assert\catcode{4DB5}{11}% <CJK Ideograph Extension A, Last>
     \Assert\catcode{4E00}{11}% <CJK Ideograph, First>
+    \Assert\catcode{9FD5}{11}% <CJK Ideograph, Last>
   }
 
 \TESTEXP{Category codes: marks}
@@ -105,6 +107,18 @@
     \Assert\uccode{01F2}{"01F1}% LATIN CAPITAL LETTER D WITH SMALL LETTER Z
     \Assert\lccode{1F88}{"1F80}% GREEK CAPITAL LETTER ALPHA WITH PSILI AND PROSGEGRAMMENI
     \Assert\uccode{1F88}{"1F88}% GREEK CAPITAL LETTER ALPHA WITH PSILI AND PROSGEGRAMMENI
+  }
+
+\TESTEXP{Case mappings: non-cased letters}
+  {%
+    \Assert\lccode{00AA}{"00AA}% FEMININE ORDINAL INDICATOR
+    \Assert\uccode{00AA}{"00AA}% FEMININE ORDINAL INDICATOR
+    \Assert\lccode{02EC}{"02EC}% MODIFIER LETTER VOICING
+    \Assert\uccode{02EC}{"02EC}% MODIFIER LETTER VOICING
+    \Assert\lccode{4E00}{"4E00}% <CJK Ideograph, First>
+    \Assert\uccode{4E00}{"4E00}% <CJK Ideograph, First>
+    \Assert\lccode{9FD5}{"9FD5}% <CJK Ideograph, Last>
+    \Assert\uccode{9FD5}{"9FD5}% <CJK Ideograph, Last>
   }
 
 \END
