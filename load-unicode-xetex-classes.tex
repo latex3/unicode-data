@@ -162,7 +162,7 @@
           \let\savedbody\body
           \count0="#1 %
           \loop
-            \ifnum\count0<"#2 %
+            \unless\ifnum\count0>"#2 %
             \expandafter\def\csname LB@\number\count0 \endcsname{#4}%
             \advance\count0 by 1 %
           \repeat
@@ -177,7 +177,7 @@
     \begingroup
       \count0="#1 %
       \loop
-        \ifnum\count0<"#2 %
+        \unless\ifnum\count0>"#2 %
           \global\XeTeXcharclass\count0=\XeTeXcharclassID
           \advance\count0 by 1 %
       \repeat
@@ -192,15 +192,15 @@
       \if H\firsttoken#4\relax 1\fi
       \if W\firsttoken#4\relax 1\fi
        >0 %
-      \parseunicodedataIV{"#1}%
       \ifx\relax#2\relax
+        \parseunicodedataIV{"#1}%
       \else
         \begingroup
           \count0="#1 %
           \loop
-            \ifnum\count0<"#2 %
-              \advance\count0 by 1 %
+            \unless\ifnum\count0>"#2 %
               \parseunicodedataIV{\count0}%
+              \advance\count0 by 1 %
           \repeat
         \endgroup
       \fi

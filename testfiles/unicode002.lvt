@@ -1,0 +1,44 @@
+%
+% Copyright (C) 2016 The LaTeX3 Project
+%
+
+\input regression-test %
+\AUTHOR{Joseph Wright}
+
+\def\Assert#1#2#3{%
+  \ifnum#1"#2=#3 %
+    \TRUE
+  \else
+    \FALSE! \string#1"#2=\number#1"#2 %
+  \fi
+  \NEWLINE
+}
+
+% Need to reset valves to those from IniTeX
+\protected\def\resetcodes#1{%
+  \XeTeXcharclass"#1=0 %
+}
+
+\resetcodes{231A}
+\resetcodes{231B}
+\resetcodes{2E80}
+\resetcodes{2E99}
+
+\input load-unicode-xetex-classes %
+
+\START
+
+\unless\ifdefined\XeTeXcharclass
+  \TYPE{XeTeX not in use!}
+  \expandafter\END
+\fi
+
+\TESTEXP{Ideographic}
+  {%
+    \Assert\XeTeXcharclass{231A}{1}% WATCH
+    \Assert\XeTeXcharclass{231B}{1}% HOURGLASS
+    \Assert\XeTeXcharclass{2E80}{1}% CJK RADICAL REPEAT
+    \Assert\XeTeXcharclass{2E99}{1}% CJK RADICAL RAP
+  }
+
+\END
