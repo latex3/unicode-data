@@ -123,6 +123,8 @@ Changes
                      EastAsianWidth.txt
                      Fix application of settings to ranges of
                      Unicode characters
+                     Correct setting of space factor for ending
+                     punctuation
 
 License and permission
 ======================

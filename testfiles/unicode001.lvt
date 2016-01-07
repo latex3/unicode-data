@@ -21,6 +21,7 @@
   \sfcode "#1 = 1000 %
   \uccode "#1 =    0 %
 }
+\resetcodes{0029}
 %\resetcodes{0041}
 %\resetcodes{0061}
 \resetcodes{00AA}
@@ -38,7 +39,10 @@
 \resetcodes{0487}
 \resetcodes{0591}
 \resetcodes{06D8}
+\resetcodes{0F3B}
 \resetcodes{1F88}
+\resetcodes{2019}
+\resetcodes{201D}
 \resetcodes{2160}
 \resetcodes{2170}
 \resetcodes{3400}
@@ -129,6 +133,14 @@
     \Assert\uccode{2160}{"0000}% ROMAN NUMERAL ONE
     \Assert\lccode{2170}{"0000}% SMALL ROMAN NUMERAL ONE
     \Assert\uccode{2170}{"2160}% SMALL ROMAN NUMERAL ONE
+  }
+
+\TESTEXP{Space factors: ending punctuation}
+  {%
+    \Assert\sfcode{0029}{0}% RIGHT PARENTHESIS
+    \Assert\sfcode{0F3B}{0}% TIBETAN MARK GUG RTAGS GYAS
+    \Assert\sfcode{2019}{0}% SINGLE COMMA QUOTATION MARK
+    \Assert\sfcode{201D}{0}% RIGHT DOUBLE QUOTATION MARK
   }
 
 \END

@@ -126,6 +126,7 @@
         \global\sfcode"#1=999 %
       \fi
     \else
+      \def\temp{#2}%
       \ifnum 0\ifx\temp\Pe 1\fi\ifx\temp\Pf 1\fi>0 %
         \global\sfcode"#1=0 %
       \fi
