@@ -261,7 +261,7 @@
     \begingroup
       \count0="#1 %
       \loop
-        \ifnum\count0<"#2 %
+        \unless\ifnum\count0>"#2 %
           \ifcsname #3\endcsname
             \global\Umathcode\count0=\csname #3\endcsname 1 \count0 %
           \fi
