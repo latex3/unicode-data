@@ -20,7 +20,8 @@ if ! command -v texlua > /dev/null; then
   cd ..
 
   # Core requirements for the test system
-  tlmgr install --no-depends l3build xetex
+  tlmgr install l3build
+  tlmgr install --no-depends  xetex
 fi
 
 # Keep no backups (not required, simply makes cache bigger)
