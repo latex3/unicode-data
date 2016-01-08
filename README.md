@@ -112,19 +112,18 @@ reported there.
 Changes
 =======
 
-- v1.0  (2015-12-01) First public release
-- v1.1  (2016-01-04) Allow setting of XeTeX character class
-                     slot numbers
-- v1.1a (2016-01-06) Correctly assign XeTeX character class for
-                     code points in ranges
-                     Fix issue which meant EastAsianWidth.txt
-                     was not read
-- v1.1b (2016-01-07) Avoid save stack issue when loaded
-                     EastAsianWidth.txt
-                     Fix application of settings to ranges of
-                     Unicode characters
-                     Correct setting of space factor for ending
-                     punctuation
+- v1.0  (2015-12-01)
+  - First public release
+- v1.1  (2016-01-04)
+  - Allow setting of XeTeX character class slot numbers
+- v1.1a (2016-01-06)
+  - Correctly assign XeTeX character class for code points in
+    ranges
+  - Fix issue which meant EastAsianWidth.txt was not read
+- v1.1b (2016-01-8)
+  - Avoid save stack issue when loading EastAsianWidth.txt
+  - Fix application of settings to ranges of Unicode characters
+  - Correct setting of space factor for ending punctuation
 
 License and permission
 ======================
