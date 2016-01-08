@@ -60,6 +60,31 @@
 \resetcodes{4E00}
 \resetcodes{9FD5}
 
+\protected\def\resetmathcode#1{%
+  \Umathcode"#1=0 0 "#1 %
+}
+\resetmathcode{0028}
+\resetmathcode{0029}
+\resetmathcode{002B}
+\resetmathcode{002C}
+\resetmathcode{002F}
+\resetmathcode{003C}
+\resetmathcode{0041}
+\resetmathcode{005A}
+\resetmathcode{0391}
+\resetmathcode{0606}
+\resetmathcode{2010}
+\resetmathcode{2020}
+\resetmathcode{2190}
+\resetmathcode{21B3}
+\resetmathcode{21BA}
+\resetmathcode{21FF}
+\resetmathcode{2212}
+\resetmathcode{2308}
+\resetmathcode{2309}
+\resetmathcode{1D456}
+\resetmathcode{1D49B}
+
 \input load-unicode-data %
 
 \START
@@ -160,8 +185,6 @@
     \AssertUmathcode{002B}{2}%
     \AssertUmathcode{2212}{2}%
     \AssertUmathcode{003C}{3}%
-    \AssertUmathcode{2190}{3}%
-    \AssertUmathcode{21B3}{3}%
     \AssertUmathcode{2020}{3}%
     \AssertUmathcode{2190}{3}%
     \AssertUmathcode{21B3}{3}%
