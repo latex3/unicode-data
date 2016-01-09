@@ -72,6 +72,7 @@ The following mappings between Unicode and XeTeX classes occur
 - "OP" is class 2
 - "CL", "NS", "EX", "IS" are class 3
 - "CM" is class 256 (ignored)
+
 as standard: these may be over-ridden by defining
 `\XeTeXcharclass<class>` as required.
 
