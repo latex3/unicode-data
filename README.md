@@ -32,21 +32,8 @@ From the file `UnicodeData.txt` the following properties are set:
   which an upper or lower case mapping is given
 - `\sfcode` 0 (ignored) for code points of Unicode classes "Pe"
   (closing punctuation marks) and "Pf" (final quotation marks)
-
-From the file `MathClass.txt` the following mapping are
-implemented between Unicode classes and TeX math types
-- "L" (large)       `\mathop`
-- "B" (binary)      `\mathbin`
-- "V" (vary)        `\mathbin`
-- "R" (relation)    `\mathrel`
-- "O" (opening)     `\mathopen`
-- "C" (closing)     `\mathclose`
-- "P" (punctuation) `\mathpunct`
-- "A" (alphabetic)  `\mathalpha`
-
-For each code point processed, the result is of the form
-
-    \Umathcode <codepoint> = <type> 1 <codepoint>
+- `\Umathcode` for all letters in the base plane class 7 (var)
+  and for the supplementary plane class 0 (regular)
 
 File: `load-unicode-xetex-classes.tex`
 ======================================
@@ -121,10 +108,14 @@ Changes
   - Correctly assign XeTeX character class for code points in
     ranges
   - Fix issue which meant `EastAsianWidth.txt` was not read
-- v1.1b (2016-01-8)
+- v1.1b (2016-01-08)
   - Avoid save stack issue when loading `EastAsianWidth.txt`
   - Fix application of settings to ranges of Unicode characters
   - Correct setting of space factor for ending punctuation
+- v1.2 (2016-02-02)
+  - Drop use of Unicode math data at present: undesired effect on
+    output if Unicode fonts are not loaded (classical OT1
+    situation)
 
 License and permission
 ======================
