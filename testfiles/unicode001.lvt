@@ -178,29 +178,4 @@
     \Assert\sfcode{201D}{0}% RIGHT DOUBLE QUOTATION MARK
   }
 
-\TEST{Math codes}
-  {%
-    \AssertUmathcode{0606}{1}%
-    \AssertUmathcode{002F}{2}%
-    \AssertUmathcode{002B}{2}%
-    \AssertUmathcode{2212}{2}%
-    \AssertUmathcode{003C}{3}%
-    \AssertUmathcode{2020}{3}%
-    \AssertUmathcode{2190}{3}%
-    \AssertUmathcode{21B3}{3}%
-    \AssertUmathcode{21BA}{3}%
-    \AssertUmathcode{21FF}{3}%
-    \AssertUmathcode{0028}{4}%
-    \AssertUmathcode{2308}{4}%
-    \AssertUmathcode{0029}{5}%
-    \AssertUmathcode{2309}{5}%
-    \AssertUmathcode{002C}{6}%
-    \AssertUmathcode{2010}{6}%
-    \AssertUmathcode{0041}{7}%
-    \AssertUmathcode{005A}{7}%
-    \AssertUmathcode{0391}{7}%
-    \AssertUmathcode{1D456}{7}%
-    \AssertUmathcode{1D49B}{7}%
-  }
-
 \END
