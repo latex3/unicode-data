@@ -14,16 +14,6 @@
   \NEWLINE
 }
 
-\def\AssertUmathcode#1#2{%
-  \edef\temp{\the\Umathcodenum"#1 }%
-  \Umathcode"#1="#2 1 "#1 %
-  \ifnum\temp=\Umathcodenum"#1 %
-    \TYPE{\TRUE}
-  \else
-    \TYPE{\FALSE! \string\Umathcodenum"#1=\number\Umathcodenum"#1 }%
-  \fi
-}
-
 % Need to reset valves to those from IniTeX
 \protected\def\resetcodes#1{%
   \catcode"#1 =   12 %
@@ -59,31 +49,6 @@
 \resetcodes{4DB5}
 \resetcodes{4E00}
 \resetcodes{9FD5}
-
-\protected\def\resetmathcode#1{%
-  \Umathcode"#1=0 0 "#1 %
-}
-\resetmathcode{0028}
-\resetmathcode{0029}
-\resetmathcode{002B}
-\resetmathcode{002C}
-\resetmathcode{002F}
-\resetmathcode{003C}
-\resetmathcode{0041}
-\resetmathcode{005A}
-\resetmathcode{0391}
-\resetmathcode{0606}
-\resetmathcode{2010}
-\resetmathcode{2020}
-\resetmathcode{2190}
-\resetmathcode{21B3}
-\resetmathcode{21BA}
-\resetmathcode{21FF}
-\resetmathcode{2212}
-\resetmathcode{2308}
-\resetmathcode{2309}
-\resetmathcode{1D456}
-\resetmathcode{1D49B}
 
 \input load-unicode-data %
 
