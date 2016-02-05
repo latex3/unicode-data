@@ -35,6 +35,24 @@ From the file `UnicodeData.txt` the following properties are set:
 - `\Umathcode` for all letters in the base plane class 7 (var)
   and for the supplementary plane class 0 (regular)
 
+File: `load-unicode-math-classes.tex`
+======================================
+
+From the file `MathClass.txt` the following mapping between
+Unicode math classes and TeX math types are set up
+- "L" (large)       `\mathop`
+- "B" (binary)      `\mathbin`
+- "V" (vary)        `\mathbin`
+- "R" (relation)    `\mathrel`
+- "O" (opening)     `\mathopen`
+- "C" (closing)     `\mathclose`
+- "P" (punctuation) `\mathpunct`
+- "A" (alphabetic)  `\mathalpha`
+
+For each code point processed, the result is of the form
+
+    \Umathcode <codepoint> = <type> 1 <codepoint>
+
 File: `load-unicode-xetex-classes.tex`
 ======================================
 
@@ -119,6 +137,8 @@ Changes
 - v1.2a (2016-02-05)
   - Correct split between base and supplementary plane when
     setting math codes
+- v1.3 (2016-02-05)
+  - New `load-unicode-math-classes.tex` loader
 
 License and permission
 ======================

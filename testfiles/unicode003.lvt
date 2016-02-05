@@ -1,0 +1,72 @@
+%
+% Copyright (C) 2016 The LaTeX3 Project
+%
+
+\input regression-test %
+\AUTHOR{Joseph Wright}
+
+\def\AssertUmathcode#1#2{%
+  \edef\temp{\the\Umathcodenum"#1 }%
+  \Umathcode"#1="#2 1 "#1 %
+  \ifnum\temp=\Umathcodenum"#1 %
+    \TYPE{\TRUE}
+  \else
+    \TYPE{\FALSE! \string\Umathcodenum"#1=\number\Umathcodenum"#1 }%
+  \fi
+}
+
+\protected\def\resetmathcode#1{%
+  \Umathcode"#1=0 0 "#1 %
+}
+\resetmathcode{0028}
+\resetmathcode{0029}
+\resetmathcode{002B}
+\resetmathcode{002C}
+\resetmathcode{002F}
+\resetmathcode{003C}
+\resetmathcode{0041}
+\resetmathcode{005A}
+\resetmathcode{0391}
+\resetmathcode{0606}
+\resetmathcode{2010}
+\resetmathcode{2020}
+\resetmathcode{2190}
+\resetmathcode{21B3}
+\resetmathcode{21BA}
+\resetmathcode{21FF}
+\resetmathcode{2212}
+\resetmathcode{2308}
+\resetmathcode{2309}
+\resetmathcode{1D456}
+\resetmathcode{1D49B}
+
+\input load-unicode-math-classes %
+
+\START
+
+\TEST{Math codes}
+  {%
+    \AssertUmathcode{0606}{1}%
+    \AssertUmathcode{002F}{2}%
+    \AssertUmathcode{002B}{2}%
+    \AssertUmathcode{2212}{2}%
+    \AssertUmathcode{003C}{3}%
+    \AssertUmathcode{2020}{3}%
+    \AssertUmathcode{2190}{3}%
+    \AssertUmathcode{21B3}{3}%
+    \AssertUmathcode{21BA}{3}%
+    \AssertUmathcode{21FF}{3}%
+    \AssertUmathcode{0028}{4}%
+    \AssertUmathcode{2308}{4}%
+    \AssertUmathcode{0029}{5}%
+    \AssertUmathcode{2309}{5}%
+    \AssertUmathcode{002C}{6}%
+    \AssertUmathcode{2010}{6}%
+    \AssertUmathcode{0041}{7}%
+    \AssertUmathcode{005A}{7}%
+    \AssertUmathcode{0391}{7}%
+    \AssertUmathcode{1D456}{7}%
+    \AssertUmathcode{1D49B}{7}%
+  }
+
+\END
