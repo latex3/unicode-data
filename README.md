@@ -32,8 +32,7 @@ From the file `UnicodeData.txt` the following properties are set:
   which an upper or lower case mapping is given
 - `\sfcode` 0 (ignored) for code points of Unicode classes "Pe"
   (closing punctuation marks) and "Pf" (final quotation marks)
-- `\Umathcode` for all letters in the base plane class 7 (var)
-  and for the supplementary plane class 0 (regular)
+- `\Umathcode` for all letters as TeX class 7 (var)
 
 File: `load-unicode-math-classes.tex`
 ======================================
@@ -139,6 +138,8 @@ Changes
     setting math codes
 - v1.3 (2016-02-05)
   - New `load-unicode-math-classes.tex` loader
+  - Set all letters as math type 7 (var) in
+    `load-unicode-data.tex`
 
 License and permission
 ======================
