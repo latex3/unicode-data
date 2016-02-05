@@ -116,6 +116,9 @@ Changes
   - Drop use of Unicode math data at present: undesired effect on
     output if Unicode fonts are not loaded (classical OT1
     situation)
+- v1.2a (2016-02-05)
+  - Correct split between base and supplementary plane when
+    setting math codes
 
 License and permission
 ======================
