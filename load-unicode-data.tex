@@ -197,48 +197,4 @@
     \fi
   \repeat
   \closein0 %
-% All of the other data files have some common aspects to their format. We
-% therefore begin with some shared code. First a check for a comment line:
-% these can be skipped. (Currently only |MathClass.txt| is used by this code
-% is also usable with the other Unicode data files.)
-  \edef\hash{\string#}%
-  \def\parseunicodedataI#1\relax{%
-    \unless\if\hash\firsttoken#1?\relax
-      \parseunicodedataII#1\relax
-    \fi
-  }%
-% The first entry in all of the files is a code point or range of code points:
-% set up to find a range. The definition of |\parseunicodedataIV| will depend on
-% the data being processed and may need to split the remainder of the line
-% further.
-  \def\parseunicodedataII#1;#2\relax{%
-    \parseunicodedataIII#1....\relax{#2}%
-  }%
-  \def\parseunicodedataIII#1..#2..#3\relax#4{%
-    \ifx\relax#2\relax
-      \parseunicodedataIV{#1}{#1}#4\relax
-    \else
-      \parseunicodedataIV{#1}{#2}#4\relax
-    \fi
-  }%
-% A shared routine for reading the data files: only one part of the parser
-% has to be altered.
-  \def\readandparse#1{%
-    \catcode`\#=12 %
-    \openin0=#1.txt %
-% Read two lines from the source file to extract the version information: it is
-% always the first two lines of the file.
-    \read0 to \unicodedataline
-    \message{\unicodedataline ^^J}%
-    \read0 to \unicodedataline
-    \message{\unicodedataline ^^J}%
-    \loop\unless\ifeof0 %
-      \read0 to \unicodedataline
-      \unless\ifx\unicodedataline\storedpar
-        \expandafter\parseunicodedataI\unicodedataline\relax
-      \fi
-    \repeat
-    \catcode`\#=6 %
-    \closein0 %
-  }%
 \endgroup
