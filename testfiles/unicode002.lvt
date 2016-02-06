@@ -14,7 +14,7 @@
   \NEWLINE
 }
 
-% Need to reset valves to those from IniTeX
+% Need to reset values to those from IniTeX
 \protected\def\resetcodes#1{%
   \XeTeXcharclass"#1=0 %
 }
