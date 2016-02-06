@@ -136,7 +136,7 @@ Changes
 - v1.2a (2016-02-05)
   - Correct split between base and supplementary plane when
     setting math codes
-- v1.3 (2016-02-05)
+- v1.3 (2016-02-06)
   - New `load-unicode-math-classes.tex` loader
   - Set all letters as math type 7 (var) in
     `load-unicode-data.tex`
