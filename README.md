@@ -140,6 +140,8 @@ Changes
   - New `load-unicode-math-classes.tex` loader
   - Set all letters as math type 7 (var) in
     `load-unicode-data.tex`
+- v1.3a (2016-02-06)
+  - Add defintion of `\loop` to `load-unicode-math-classes.tex`
 
 License and permission
 ======================

@@ -92,6 +92,18 @@
       \repeat
     \endgroup
   }%
+% From plain: may not be defined (yet).
+  \def\loop#1\repeat{\def\body{#1}\iterate}%
+  \def\iterate{%
+    \body
+      \let\next\iterate
+    \else
+      \let\next\relax
+    \fi
+    \next
+  }%
+  \let\repeat\fi
+% Now we can load the data.
   \catcode`\#=12 %
   \def\storedpar{\par}%
   \openin0=MathClass.txt %
