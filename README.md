@@ -59,6 +59,7 @@ From the files `EastAsianWidth.txt` and `LineBreak.txt` inter
 character classes for XeTeX (`\XeTeXcharclass`) are set for the
 following classes
 - "ID" (ideographic)
+- "CJ" (conditional Japanese starter)
 - "OP" (opener)
 - "CL" (closer)
 - "NS" (non-starter)
@@ -66,13 +67,13 @@ following classes
 - "IS" (infix separator)
 - "CM" (combining marks)
 
-All code points of class "ID" are assigned to a
+All code points of classes "ID" and "CJ" are assigned to a
 `\XeTeXcharclass`, but for other classes this only occurs when
 they fall into east Asian width type "F", "H" or "W" (full-,
 half- and wide-width).
 
 The following mappings between Unicode and XeTeX classes occur
-- "ID" is class 1
+- "ID" and "CJ" are class 1
 - "OP" is class 2
 - "CL", "NS", "EX", "IS" are class 3
 - "CM" is class 256 (ignored)
@@ -142,6 +143,9 @@ Changes
     `load-unicode-data.tex`
 - v1.3a (2016-02-06)
   - Add defintion of `\loop` to `load-unicode-math-classes.tex`
+- v1.4 (2016-02-16)
+  - Treat "CJ" chars like "ID" chars for setting XeTeX character
+    class
 
 License and permission
 ======================

@@ -15,6 +15,7 @@
 % Unicode Consortium, and when used with XeTeX sets \XeTeXcharclass for
 % the following classes of code point:
 % - "ID" (ideographic)
+% - "CJ" (conditional Japanese starter)
 % - "OP" (opener)
 % - "CL" (closer)
 % - "NS" (non-starter)
@@ -22,12 +23,12 @@
 % - "IS" (infix separator)
 % - "CM" (combining marks)
 %
-% All code points of class "ID" are assigned to a \XeTeXcharclass, but for
-% other classes this only occurs when they fall into east Asian width type
-% "F", "H" or "W" (full-, half- and wide-width).
+% All code points of classes "ID" and "CJ" are assigned to a \XeTeXcharclass,
+% but for other classes this only occurs when they fall into east Asian width
+% type "F", "H" or "W" (full-, half- and wide-width).
 %
 % The following mappings between Unicode and XeTeX classes occur
-% - "ID" is class 1
+% - "ID" and "CJ" are class 1
 % - "OP" is class 2
 % - "CL", "NS", "EX", "IS" are class 3
 % - "CM" is class 256 (ignored)
@@ -116,6 +117,10 @@
   \else
     \chardef\XeTeXcharclassID=1 %
   \fi
+  \ifdefined\XeTeXcharclassCJ
+  \else
+    \chardef\XeTeXcharclassCJ=1 %
+  \fi
   \ifdefined\XeTeXcharclassOP
   \else
     \chardef\XeTeXcharclassOP=2 %
@@ -141,18 +146,22 @@
     \chardef\XeTeXcharclassCM=256 %
   \fi
 % Check the line break class and if necessary the east Asian width for the
-% current code point. For code points of class |ID| there may be a range to
-% set, and these are always recorded. In other cases if the code point is
-% one of those we may need to set up then save it for checking against the
+% current code point. For code points of class |ID| or |CJ| there may be a
+% range to set, and these are always recorded. In other cases if the code point
+% is one of those we may need to set up then save it for checking against the
 % list of east Asian widths.
   \def\ID{ID}%
+  \def\CJ{CJ}%
   \def\parseunicodedataIII#1..#2..#3\relax#4{%
     \def\temp{#4}%
-    \ifx\temp\ID
+    \ifnum 0%
+      \ifx\temp\ID 1\fi
+      \ifx\temp\CJ 1\fi
+      >0 %
       \ifx\relax#2\relax
-        \parseunicodedataIV{#1}{#1}%
+        \parseunicodedataIV{#1}{#1}{#4}%
       \else
-        \parseunicodedataIV{#1}{#2}%
+        \parseunicodedataIV{#1}{#2}{#4}%
       \fi
     \else
       \ifcsname XeTeXcharclass#4\endcsname
@@ -173,12 +182,12 @@
   }%
 % As we are inside a loop already, there needs to be a group here to preserve
 % the iterator.
-  \def\parseunicodedataIV#1#2{%
+  \def\parseunicodedataIV#1#2#3{%
     \begingroup
       \count0="#1 %
       \loop
         \unless\ifnum\count0>"#2 %
-          \global\XeTeXcharclass\count0=\XeTeXcharclassID
+          \global\XeTeXcharclass\count0=\csname XeTeXcharclass#3\endcsname
           \advance\count0 by 1 %
       \repeat
     \endgroup

@@ -34,6 +34,7 @@
 \resetcodes{3005}
 \resetcodes{309B}
 \resetcodes{309C}
+\resetcodes{3041}
 \resetcodes{FE13}
 \resetcodes{FE14}
 \resetcodes{FF01}
@@ -57,6 +58,7 @@
     \Assert\XeTeXcharclass{231B}{1}% HOURGLASS
     \Assert\XeTeXcharclass{2E80}{1}% CJK RADICAL REPEAT
     \Assert\XeTeXcharclass{2E99}{1}% CJK RADICAL RAP
+    \Assert\XeTeXcharclass{3041}{1}% HIRAGANA LETTER SMALL A
   }
 
 \TESTEXP{Opener}
