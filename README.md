@@ -142,7 +142,7 @@ Changes
   - Set all letters as math type 7 (var) in
     `load-unicode-data.tex`
 - v1.3a (2016-02-06)
-  - Add defintion of `\loop` to `load-unicode-math-classes.tex`
+  - Add definition of `\loop` to `load-unicode-math-classes.tex`
 - v1.4 (2016-02-16)
   - Treat "CJ" chars like "ID" chars for setting XeTeX character
     class
