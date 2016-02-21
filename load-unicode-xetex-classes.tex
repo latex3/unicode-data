@@ -33,7 +33,8 @@
 % - "CL", "NS", "EX", "IS" are class 3
 % - "CM" is class 256 (ignored)
 % as standard: these may be over-ridden by defining \XeTeXcharclass<class>
-% as required.
+% as required. (If classes "ID" or "CL" are explicitly set, the other members
+% of the same groups above will inherit these values.)
 %
 % This file does _not_ activate XeTeX's inter-character token mechanism
 % (\XeTeXinterchartokenstate is not set) nor does it install any material in
@@ -119,7 +120,7 @@
   \fi
   \ifdefined\XeTeXcharclassCJ
   \else
-    \chardef\XeTeXcharclassCJ=1 %
+    \let\XeTeXcharclassCJ\XeTeXcharclassID
   \fi
   \ifdefined\XeTeXcharclassOP
   \else
@@ -131,15 +132,15 @@
   \fi
   \ifdefined\XeTeXcharclassEX
   \else
-    \chardef\XeTeXcharclassEX=3 %
+    \let\XeTeXcharclassEX\XeTeXcharclassCL
   \fi
   \ifdefined\XeTeXcharclassIS
   \else
-    \chardef\XeTeXcharclassIS=3 %
+    \let\XeTeXcharclassIS\XeTeXcharclassCL
   \fi
   \ifdefined\XeTeXcharclassNS
   \else
-    \chardef\XeTeXcharclassNS=3 %
+    \let\XeTeXcharclassNS\XeTeXcharclassCL
   \fi
   \ifdefined\XeTeXcharclassCM
   \else

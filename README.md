@@ -79,7 +79,9 @@ The following mappings between Unicode and XeTeX classes occur
 - "CM" is class 256 (ignored)
 
 as standard: these may be over-ridden by defining
-`\XeTeXcharclass<class>` as required.
+`\XeTeXcharclass<class>` as required. (If classes "ID" or "CL"
+are explicitly set, the other members of the same groups above
+will inherit these values.)
 
 This file does _not_ activate XeTeX's inter-character token
 mechanism (`\XeTeXinterchartokenstate` is not set) nor does it
@@ -146,6 +148,9 @@ Changes
 - v1.4 (2016-02-16)
   - Treat "CJ" chars like "ID" chars for setting XeTeX character
     class
+- v1.4a (2016-02-21)
+  - Inherit XeTeX classes for "CJ" from "ID" and for  "NS", "EX"
+    and "IS" from "CL" if appropriate
 
 License and permission
 ======================
