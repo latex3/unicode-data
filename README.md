@@ -151,6 +151,8 @@ Changes
 - v1.4a (2016-02-21)
   - Inherit XeTeX classes for "CJ" from "ID" and for  "NS", "EX"
     and "IS" from "CL" if appropriate
+- v1.5 (2016-06-22)
+  - Update data files to Unicode release 9.0.0
 
 License and permission
 ======================
