@@ -170,7 +170,7 @@ Consortium and the following notice applies.
 
 COPYRIGHT AND PERMISSION NOTICE
 
-Copyright © 1991-2015 Unicode, Inc. All rights reserved.
+Copyright © 1991-2016 Unicode, Inc. All rights reserved.
 Distributed under the Terms of Use in 
 http://www.unicode.org/copyright.html.
 
