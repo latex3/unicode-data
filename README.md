@@ -37,7 +37,7 @@ From the file `UnicodeData.txt` the following properties are set:
 File: `load-unicode-math-classes.tex`
 ======================================
 
-From the file `MathClass.txt` the following mapping between
+From the file `MathClass-15.txt` the following mapping between
 Unicode math classes and TeX math types are set up
 - "L" (large)       `\mathop`
 - "B" (binary)      `\mathbin`
@@ -104,7 +104,7 @@ Unicode Consortium (see below):
 
 With the exception of `MathClass.txt`, which is currently not
 formally part of the Unicode Character Database, all of the
-data files here are for Unicode 8.0.0.
+data files here are for Unicode 10.0.0.
 
 Requests to include additional Unicode data files in this bundle are
 welcome. Ideally this bundle will act as a single location for all
