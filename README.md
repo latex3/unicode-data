@@ -153,6 +153,8 @@ Changes
     and "IS" from "CL" if appropriate
 - v1.5 (2016-06-22)
   - Update data files to Unicode release 9.0.0
+- v1.6 (2017-06-27)
+  - Update data files to Unicode release 10.0.0
 
 License and permission
 ======================
