@@ -17,7 +17,7 @@ From the file `UnicodeData.txt` the following properties are set:
 - `\catcode` 11 for all combining marks (Unicode class "M")
 - `\sfcode` 999 for all code points of class "Lu" (upper case
   letters)
-- `\lccode` for all of class "Ll" (upper case letters) to the code
+- `\lccode` for all of class "Ll" (lower case letters) to the code
   point itself, and `\uccode` to the upper case mapping (or if
   not given to the code point itself)
 - `\uccode` for all of class "Lu" (upper case letters) to the code
