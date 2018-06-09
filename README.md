@@ -155,11 +155,13 @@ Changes
   - Update data files to Unicode release 9.0.0
 - v1.6 (2017-06-27)
   - Update data files to Unicode release 10.0.0
+- v1.7 (2018-08-09)
+  - Update data files to Unicode release 11.0.0
 
 License and permission
 ======================
 
-This bundle is copyright (C) 2015-2017 The LaTeX3 Project
+This bundle is copyright (C) 2015-2018 The LaTeX3 Project
 
 It may be distributed and/or modified under the conditions of
 the LaTeX Project Public License (LPPL), either version 1.3c of
