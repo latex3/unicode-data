@@ -24,14 +24,17 @@ tdsroot = "generic"
 -- Release a TDS-style zip
 packtdszip  = true
 
--- Versioning
-versionfiles = {"load-unicode-*.tex"}
-function setversion_update_line(line, date, version)
-  return string.gsub(
-    line,
-    "v%d.%d.? %(%d%d%d%d%-%d%d%-%d%d%)",
-    "v" .. version .. " (" .. date .. ")"
-  )
+-- Tagging
+tagfiles = {"load-unicode-*.tex"}
+function update_tag(file,content,tagname,tagdate)
+  return string.gsub(content,
+    "v%d%.%d.? %(%d%d%d%d%-%d%d%-%d%d%)",
+    tagname .. " (" .. tagdate .. ")")
+end
+
+function tag_hook(tagname)
+  os.execute('git commit -a -m "Step release tag"')
+  os.execute('git tag -a -m "" ' .. tagname)
 end
 
 -- Find and run the build system
