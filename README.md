@@ -157,11 +157,13 @@ Changes
   - Update data files to Unicode release 10.0.0
 - v1.7 (2018-08-09)
   - Update data files to Unicode release 11.0.0
+- v1.8 (2019-03-09)
+  - Update data files to Unicode release 12.0.0
 
 License and permission
 ======================
 
-This bundle is copyright (C) 2015-2018 The LaTeX3 Project
+This bundle is copyright (C) 2015-2019 The LaTeX3 Project
 
 It may be distributed and/or modified under the conditions of
 the LaTeX Project Public License (LPPL), either version 1.3c of
@@ -175,7 +177,7 @@ Consortium and the following notice applies.
 COPYRIGHT AND PERMISSION NOTICE
 
 
-Copyright © 1991-2018 Unicode, Inc. All rights reserved.
+Copyright © 1991-2019 Unicode, Inc. All rights reserved.
 Distributed under the Terms of Use in http://www.unicode.org/copyright.html.
 
 Permission is hereby granted, free of charge, to any person obtaining
