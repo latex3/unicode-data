@@ -104,7 +104,7 @@ Unicode Consortium (see below):
 
 With the exception of `MathClass.txt`, which is currently not
 formally part of the Unicode Character Database, all of the
-data files here are for Unicode 10.0.0.
+data files here are for Unicode 12.1.0.
 
 Requests to include additional Unicode data files in this bundle are
 welcome. Ideally this bundle will act as a single location for all
@@ -159,6 +159,8 @@ Changes
   - Update data files to Unicode release 11.0.0
 - v1.8 (2019-03-09)
   - Update data files to Unicode release 12.0.0
+- v1.? (????-??-??) Unreleased
+  - Update data files to Unicode release 12.1.0
 
 License and permission
 ======================
