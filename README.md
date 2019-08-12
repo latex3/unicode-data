@@ -96,6 +96,7 @@ Data files
 The following data files are included here with permission of the
 Unicode Consortium (see below):
 - `UnicodeData.txt`
+- `BidiBrackets.txt`
 - `CaseFolding.txt`
 - `EastAsianWidth.txt`
 - `LineBreak.txt`
@@ -103,7 +104,6 @@ Unicode Consortium (see below):
 - `SpecialCasing.txt`
 - `Scripts.txt`
 - `ScriptExtension.txt`
-- `BidiBrackets.txt`
 
 With the exception of `MathClass.txt`, which is currently not
 formally part of the Unicode Character Database, all of the
@@ -164,7 +164,7 @@ Changes
   - Update data files to Unicode release 12.0.0
 - v1.? (????-??-??) Unreleased
   - Update data files to Unicode release 12.1.0
-  - Add `Scripts.txt`, `ScriptExtension.txt`, and `BidiBrackets.txt`
+  - Add  `BidiBrackets.txt`, `Scripts.txt` and `ScriptExtension.txt`
 
 License and permission
 ======================
