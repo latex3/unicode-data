@@ -162,7 +162,7 @@ Changes
   - Update data files to Unicode release 11.0.0
 - v1.8 (2019-03-09)
   - Update data files to Unicode release 12.0.0
-- v1.? (????-??-??) Unreleased
+- v1.9 (2019-08-13)
   - Update data files to Unicode release 12.1.0
   - Add  `BidiBrackets.txt`, `Scripts.txt` and `ScriptExtension.txt`
 
