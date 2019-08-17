@@ -101,6 +101,7 @@ Unicode Consortium (see below):
 - `EastAsianWidth.txt`
 - `LineBreak.txt`
 - `MathClass.txt`
+- `PropList.txt`
 - `SpecialCasing.txt`
 - `Scripts.txt`
 - `ScriptExtension.txt`
@@ -165,6 +166,8 @@ Changes
 - v1.9 (2019-08-13)
   - Update data files to Unicode release 12.1.0
   - Add  `BidiBrackets.txt`, `Scripts.txt` and `ScriptExtension.txt`
+- v1.10 (????-??-??) -- Unreleased
+  - Add `PropList.txt`
 
 License and permission
 ======================
