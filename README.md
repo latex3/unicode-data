@@ -166,7 +166,7 @@ Changes
 - v1.9 (2019-08-13)
   - Update data files to Unicode release 12.1.0
   - Add  `BidiBrackets.txt`, `Scripts.txt` and `ScriptExtension.txt`
-- v1.10 (????-??-??) -- Unreleased
+- v1.10 (2019-08-21)
   - Add `PropList.txt`
 
 License and permission
