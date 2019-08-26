@@ -97,6 +97,8 @@ The following data files are included here with permission of the
 Unicode Consortium (see below):
 - `UnicodeData.txt`
 - `BidiBrackets.txt`
+- `BidiMirroring.txt`
+- `BidiMirroring-5-1-0.txt`
 - `CaseFolding.txt`
 - `EastAsianWidth.txt`
 - `LineBreak.txt`
@@ -107,8 +109,15 @@ Unicode Consortium (see below):
 - `ScriptExtension.txt`
 
 With the exception of `MathClass.txt`, which is currently not
-formally part of the Unicode Character Database, all of the
-data files here are for Unicode 12.1.0.
+formally part of the Unicode Character Database, and
+`BidiMirroring-5-1-0.txt`, which is a data file for Unicode 5.1.0,
+all of the data files here are for Unicode 12.1.0.
+
+`BidiMirroring-5-1-0.txt` will never be updated and is included for
+OpenType font support: While `BidiMirroring.txt` lists all mirror
+pairs in the current Unicode version, only the pairs from Unicode 5.1.0
+are handled directly by the OpenType rendering system. All newer pairs
+have to be handled through font features.
 
 Requests to include additional Unicode data files in this bundle are
 welcome. Ideally this bundle will act as a single location for all
