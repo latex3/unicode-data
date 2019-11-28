@@ -177,6 +177,8 @@ Changes
   - Add  `BidiBrackets.txt`, `Scripts.txt` and `ScriptExtension.txt`
 - v1.10 (2019-08-21)
   - Add `PropList.txt`
+- v1.11 (2019-11-28)
+  - Add `BidiMirroring.txt` and `BidiMirroring-5-1-0.txt`
 
 License and permission
 ======================
