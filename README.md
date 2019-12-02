@@ -32,7 +32,8 @@ From the file `UnicodeData.txt` the following properties are set:
   which an upper or lower case mapping is given
 - `\sfcode` 0 (ignored) for code points of Unicode classes "Pe"
   (closing punctuation marks) and "Pf" (final quotation marks)
-- `\Umathcode` for all letters as TeX class 7 (var)
+- `\Umathcode` for all letters (Unicode class "L") and combining
+  marks (Unicode class "M") as TeX class 7 (var)
 
 In the above, 'letters' refers to code points with Unicode class
 "L", irrespective of their TeX category code.
