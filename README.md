@@ -24,7 +24,7 @@ From the file `UnicodeData.txt` the following properties are set:
   point itself, and `\lccode` to the lower case mapping (or if
   not given to the code point itself)
 - `\lccode` and `\uccode` for all of class "Lt" (title case
-  letters) to the lower can upper case mappings (or if not given
+  letters) to the lower and upper case mappings (or if not given
   to the code point itself)
 - `\lccode` and `\uccode` for all other letter code points are
   set to the code point itself
@@ -33,6 +33,9 @@ From the file `UnicodeData.txt` the following properties are set:
 - `\sfcode` 0 (ignored) for code points of Unicode classes "Pe"
   (closing punctuation marks) and "Pf" (final quotation marks)
 - `\Umathcode` for all letters as TeX class 7 (var)
+
+In the above, 'letters' refers to code points with Unicode class
+"L", irrespective of their TeX category code.
 
 File: `load-unicode-math-classes.tex`
 ======================================
