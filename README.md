@@ -105,6 +105,8 @@ Unicode Consortium (see below):
 - `BidiMirroring-5-1-0.txt`
 - `CaseFolding.txt`
 - `EastAsianWidth.txt`
+- `emoji-data.txt`
+- `GraphemeBreakProperty.txt`
 - `LineBreak.txt`
 - `MathClass.txt`
 - `PropList.txt`
@@ -185,6 +187,8 @@ Changes
   - Add `BidiMirroring.txt` and `BidiMirroring-5-1-0.txt`
 - v1.12 (2020-03-11)
   - Update data files to Unicode release 13.0.0
+- v1.13 (2020-04-15)
+  - Add `emoji-data.txt` and `GraphemeBreakProperty.txt`
 
 License and permission
 ======================
