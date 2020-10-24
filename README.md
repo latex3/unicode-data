@@ -113,6 +113,7 @@ Unicode Consortium (see below):
 - `SpecialCasing.txt`
 - `Scripts.txt`
 - `ScriptExtension.txt`
+- `WordBreakProperty.txt`
 
 With the exception of `MathClass.txt`, which is currently not
 formally part of the Unicode Character Database, and
@@ -189,6 +190,8 @@ Changes
   - Update data files to Unicode release 13.0.0
 - v1.13 (2020-04-15)
   - Add `emoji-data.txt` and `GraphemeBreakProperty.txt`
+- v1.14 (2020-10-24)
+  - Add `WordBreakProperty.txt`
 
 License and permission
 ======================
