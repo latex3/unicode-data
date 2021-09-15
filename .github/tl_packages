@@ -1,0 +1,5 @@
+# The test framework itself
+l3build
+#
+# Required
+xetex
