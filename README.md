@@ -192,11 +192,13 @@ Changes
   - Add `emoji-data.txt` and `GraphemeBreakProperty.txt`
 - v1.14 (2020-10-24)
   - Add `WordBreakProperty.txt`
+- v1.15 (2021-09-15)
+  - Update data files to Unicode release 14.0.0
 
 License and permission
 ======================
 
-This bundle is copyright (C) 2015-2020 The LaTeX3 Project
+This bundle is copyright (C) 2015-2021 The LaTeX Project
 
 It may be distributed and/or modified under the conditions of
 the LaTeX Project Public License (LPPL), either version 1.3c of
@@ -210,8 +212,8 @@ Consortium and the following notice applies.
 COPYRIGHT AND PERMISSION NOTICE
 
 
-Copyright © 1991-2020 Unicode, Inc. All rights reserved.
-Distributed under the Terms of Use in http://www.unicode.org/copyright.html.
+Copyright © 1991-2021 Unicode, Inc. All rights reserved.
+Distributed under the Terms of Use in https://www.unicode.org/copyright.html.
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of the Unicode data files and any associated documentation
