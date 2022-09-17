@@ -194,7 +194,7 @@ Changes
   - Add `WordBreakProperty.txt`
 - v1.15 (2021-09-15)
   - Update data files to Unicode release 14.0.0
-- v1.16 (2021-09-17)
+- v1.16 (2022-09-17)
   - Update data files to Unicode release 15.0.0
 
 License and permission
