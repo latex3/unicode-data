@@ -194,11 +194,13 @@ Changes
   - Add `WordBreakProperty.txt`
 - v1.15 (2021-09-15)
   - Update data files to Unicode release 14.0.0
+- v1.16 (2021-09-17)
+  - Update data files to Unicode release 15.0.0
 
 License and permission
 ======================
 
-This bundle is copyright (C) 2015-2021 The LaTeX Project
+This bundle is copyright (C) 2015-2022 The LaTeX Project
 
 It may be distributed and/or modified under the conditions of
 the LaTeX Project Public License (LPPL), either version 1.3c of
@@ -212,7 +214,7 @@ Consortium and the following notice applies.
 COPYRIGHT AND PERMISSION NOTICE
 
 
-Copyright © 1991-2021 Unicode, Inc. All rights reserved.
+Copyright © 1991-2022 Unicode, Inc. All rights reserved.
 Distributed under the Terms of Use in https://www.unicode.org/copyright.html.
 
 Permission is hereby granted, free of charge, to any person obtaining
