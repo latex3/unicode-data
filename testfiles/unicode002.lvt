@@ -3,7 +3,6 @@
 %
 
 \input regression-test %
-\AUTHOR{Joseph Wright}
 
 \def\Assert#1#2#3{%
   \ifnum#1"#2=#3 %

@@ -2,8 +2,7 @@
 % Copyright (C) The LaTeX Project
 %
 
-\input regression-test %
-\AUTHOR{Joseph Wright}
+\input regression-test %}
 
 \def\AssertUmathcode#1#2{%
   \edef\temp{\the\Umathcodenum"#1 }%
