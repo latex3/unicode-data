@@ -118,7 +118,7 @@ Unicode Consortium (see below):
 With the exception of `MathClass.txt`, which is currently not
 formally part of the Unicode Character Database, and
 `BidiMirroring-5-1-0.txt`, which is a data file for Unicode 5.1.0,
-all of the data files here are for Unicode 13.0.0.
+all of the data files here are for Unicode 15.1.0.
 
 `BidiMirroring-5-1-0.txt` will never be updated and is included for
 OpenType font support: While `BidiMirroring.txt` lists all mirror
@@ -196,11 +196,13 @@ Changes
   - Update data files to Unicode release 14.0.0
 - v1.16 (2022-09-17)
   - Update data files to Unicode release 15.0.0
+- v1.17 (2023-09-18)
+  - Update data files to Unicode release 15.1.0
 
 License and permission
 ======================
 
-This bundle is copyright (C) 2015-2022 The LaTeX Project
+This bundle is copyright (C) 2015-2023 The LaTeX Project
 
 It may be distributed and/or modified under the conditions of
 the LaTeX Project Public License (LPPL), either version 1.3c of
@@ -214,7 +216,7 @@ Consortium and the following notice applies.
 COPYRIGHT AND PERMISSION NOTICE
 
 
-Copyright © 1991-2022 Unicode, Inc. All rights reserved.
+Copyright © 1991-2023 Unicode, Inc. All rights reserved.
 Distributed under the Terms of Use in https://www.unicode.org/copyright.html.
 
 Permission is hereby granted, free of charge, to any person obtaining
