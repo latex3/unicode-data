@@ -199,6 +199,8 @@ Changes
 - v1.17 (2023-09-18)
   - Update data files to Unicode release 15.1.0
   - Adjust `load-unicode-xetex-classes.txt` for modified data file format
+- v1.18 (2025-01-07)
+  - Update data files to Unicode release 16.0.0
 
 License and permission
 ======================
