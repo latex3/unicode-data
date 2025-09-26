@@ -201,6 +201,8 @@ Changes
   - Adjust `load-unicode-xetex-classes.tex` for modified data file format
 - v1.18 (2025-01-07)
   - Update data files to Unicode release 16.0.0
+- v1.19 (2025-09-26)
+  - Update data files to Unicode release 17.0.0
 
 License and permission
 ======================
@@ -219,7 +221,7 @@ Consortium and the following notice applies.
 COPYRIGHT AND PERMISSION NOTICE
 
 
-Copyright © 1991-2024 Unicode, Inc. All rights reserved.
+Copyright © 1991-2025 Unicode, Inc. All rights reserved.
 Distributed under the Terms of Use in https://www.unicode.org/copyright.html.
 
 Permission is hereby granted, free of charge, to any person obtaining
