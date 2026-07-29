@@ -41,9 +41,19 @@
 \ifx\eTeXversion\undefined
   \expandafter\endinput
 \fi
-% The data can only be loaded by Unicode engines. Currently this is limited to
-% XeTeX and LuaTeX, both of which define \Umathcode.
-\ifx\Umathcode\undefined
+% The data can only be loaded by Unicode engines, which can be detected by
+% looking for \Uchar. There are a couple of wrinkles we then need to deal
+% with. First, upTeX is not-quite a Unicode engine, so we need to skip it.
+% Second, HiTeX doesn't allow setting of the full range (it pre-loads the
+% Unicode data), so again we need to bail out.
+\ifdefined\Uchar
+  \ifdefined\kanjiskip
+    \expandafter\expandafter\expandafter\endinput
+  \fi
+  \ifdefined\HINTversion
+    \expandafter\expandafter\expandafter\endinput
+  \fi
+\else
   \expandafter\endinput
 \fi
 % This file can be loaded in IniTeX mode so the category codes of |{|, |}| and
