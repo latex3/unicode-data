@@ -37,13 +37,13 @@
 %
 % =============================================================================
 %
+% Just in case, check for the e-TeX extensions.
+\ifx\eTeXversion\undefined
+  \expandafter\endinput
+\fi
 % The data can only be loaded by Unicode engines. Currently this is limited to
 % XeTeX and LuaTeX, both of which define \Umathcode.
 \ifx\Umathcode\undefined
-  \expandafter\endinput
-\fi
-% Just in case, check for the e-TeX extensions.
-\ifx\eTeXversion\undefined
   \expandafter\endinput
 \fi
 % This file can be loaded in IniTeX mode so the category codes of |{|, |}| and
