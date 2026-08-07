@@ -203,7 +203,7 @@ Changes
   - Update data files to Unicode release 16.0.0
 - v1.19 (2025-09-26)
   - Update data files to Unicode release 17.0.0
-- v1.20
+- v1.20 (2026-08-07)
   - Review Unicode detection to use `\Uchar` for text mode whilst allowing
     for upTeX and HiTeX behaviors
 
